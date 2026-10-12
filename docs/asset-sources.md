@@ -29,3 +29,7 @@ Product age, format and contents pills now use accessible HTML/CSS in `ProductAr
 ## Source control asset budget
 
 Production hero pages are 600 pixels wide; product fans are 1000 pixels wide. Both use WebP quality 82 with alpha quality 95 for the transparent fans. Each is approximately 41–143 KiB. The full production image directory is about 1 MiB. Original PNG masters, original listing screenshots, obsolete embedded-raster SVGs, mockups and browser screenshots stay in ignored reference folders. Heroicons remain small native SVGs with their MIT licence.
+
+## Favicon
+
+`public/favicon.ico` contains 16, 32 and 48 pixel versions; explicit 16 and 32 pixel PNGs are also supplied. The favicon is a simplified three-quarter brain illustration facing slightly up and to the viewer's right, with both hemispheres visible, a clear central fissure, and one broad fold per hemisphere. Its details were reduced for legibility at 16 pixels. A segmented Toolkit-colour border completes the square icon. The master and exact prompt remain in ignored `output/imagegen/mascot-brain-favicon-master.png` and `output/imagegen/mascot-brain-favicon-prompt.md`. Shared `BaseLayout.astro` includes the favicon on every page.
