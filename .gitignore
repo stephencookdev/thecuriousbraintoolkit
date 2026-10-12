@@ -1,0 +1,21 @@
+# Local reference artwork and generated design explorations.
+# Production website assets should live in src/assets/ or public/.
+/assets/brand/
+/output/
+
+# Astro / Node dependencies and generated build files.
+node_modules/
+/.astro/
+/dist/
+/.netlify/
+/.vercel/
+
+# Local environment configuration; retain shareable examples.
+.env
+.env.*
+!.env.example
+
+# Logs and OS metadata.
+*.log
+.DS_Store
+Thumbs.db
