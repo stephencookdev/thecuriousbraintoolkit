@@ -2,23 +2,23 @@ export const categories = [
   {
     id: 'emotional-literacy',
     path: '/emotional-literacy-resources-ks2/',
-    title: 'Emotional literacy resources for KS2 and ELSA',
+    title: 'Thoughts and feelings resources for children',
     label: 'Build emotional understanding',
-    description: 'Build shared understanding with connected Thoughts and Feelings toolkits.',
+    description: 'Explore the Curious Brain Thoughts and Feelings toolkits, with activities and guidance for the adults alongside children.',
   },
   {
     id: 'worry-anxiety',
     path: '/worry-anxiety-resources-children/',
     title: 'Worry and anxiety resources for children',
     label: 'Explore worry and anxiety',
-    description: 'Make sense of the brain’s Safety Alarm and explore what support might help.',
+    description: 'Explore resources that introduce the brain’s Safety Alarm and offer prompts for talking about worry and possible support.',
   },
   {
     id: 'problem-solving',
     path: '/problem-solving-skills-children/',
     title: 'Everyday problem-solving skills for children',
     label: 'Build everyday problem-solving skills',
-    description: 'Explore options, consider what might be good or tricky and decide what to try.',
+    description: 'Use a practical prompt to name an everyday problem, consider possible options and choose what to try.',
   },
 ] as const;
 

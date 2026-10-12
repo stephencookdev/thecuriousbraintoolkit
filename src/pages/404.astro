@@ -1,9 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 ---
-<BaseLayout title="Page not found" description="The requested Curious Brain page could not be found.">
-  <h1>Page not found</h1>
-  <p>Try the resources page or return to the homepage.</p>
-  <a href="/resources/">Explore resources</a>
-  <a href="/">Return home</a>
+<BaseLayout title="Page not found" description="The requested Curious Brain page could not be found." wide>
+  <section class="not-found container"><img src="/images/curious-brain-mascot.webp" alt="Curious Brain mascot with a magnifying glass" width="280" height="272" /><p class="eyebrow">404 · A little detour</p><h1>Let’s find a new starting point.</h1><p>This page could not be found. Explore the resources or head back to the homepage.</p><div class="hero-actions"><a class="button button-primary" href="/resources/">Explore resources <Icon name="arrow" /></a><a class="button button-secondary" href="/">Return home</a></div></section>
 </BaseLayout>

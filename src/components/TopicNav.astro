@@ -1,0 +1,17 @@
+---
+import { categories, resources } from '../data/resources';
+import Icon from './Icon.astro';
+interface Props { anchors?: boolean; current?: string; }
+const { anchors = false, current } = Astro.props;
+const labels = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem solving'];
+const icons = ['heart', 'cloud', 'bulb'];
+---
+<nav class="topic-nav" aria-label="Resource topics">
+  <ul>{categories.map((category, i) => <li>
+    <a class={`topic-link topic-${category.id}`} href={anchors ? `#${category.id}` : category.path} aria-current={current === category.id ? 'page' : undefined}>
+      <Icon name={icons[i]} />
+      <span><strong>{labels[i]}</strong><small>{resources.filter((resource) => resource.category === category.id).length} {resources.filter((resource) => resource.category === category.id).length === 1 ? 'resource' : 'resources'}</small></span>
+      <Icon name="arrow" />
+    </a>
+  </li>)}</ul>
+</nav>

@@ -1,34 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import TopicNav from '../components/TopicNav.astro';
+import PageCTA from '../components/PageCTA.astro';
 import ResourceCard from '../components/ResourceCard.astro';
+import Icon from '../components/Icon.astro';
 import { categories, resources } from '../data/resources';
 export function getStaticPaths() {
-  return categories.map((category) => ({
-    params: { category: category.path.replaceAll('/', '') },
-    props: { category },
-  }));
+  return categories.map((category) => ({ params: { category: category.path.replaceAll('/', '') }, props: { category } }));
 }
 const { category } = Astro.props;
 const categoryResources = resources.filter((resource) => resource.category === category.id);
+const guidance = {
+  'emotional-literacy': { title: 'Make space for their own words.', text: 'Invite a child to notice what is on their mind or how they feel, then explore it together at their pace. The connected Thoughts and Feelings toolkits include learn pages, activities and guidance for the adults alongside them.', prompts: ['What is on your mind?', 'How would you describe that feeling?', 'What would you like me to understand?'] },
+  'worry-anxiety': { title: 'Start by listening.', text: 'The Safety Alarm resources offer a shared way to talk about worry. Start with what the child notices, then explore what support could feel helpful. There is no need to rush to find a strategy or explain a feeling away.', prompts: ['What do you notice happening?', 'When does it feel easier or harder?', 'What support might help right now?'] },
+  'problem-solving': { title: 'We can work it out together.', text: 'For an everyday difficulty, slow the conversation down and look at the situation together. There may be more than one next step. These conversation prompts are a place to begin, rather than a script to follow.', prompts: ['What is the problem?', 'What could we do?', 'What might be good or tricky?', 'What shall we try?'] },
+};
+const guide = guidance[category.id as keyof typeof guidance];
 ---
-<BaseLayout title={category.title} description={category.description}>
-  <a href="/resources/">All resources</a>
-  <h1>{category.title}</h1>
-  <p>{category.description}</p>
-  {category.id === 'emotional-literacy' && <p>The connected Thoughts and Feelings toolkits build shared language and understanding, without telling children how they should think, feel or behave.</p>}
-  {category.id === 'worry-anxiety' && <p>Explore worry and anxiety through the Curious Brain Safety Alarm explanation and consider what support might help.</p>}
-  {category.id === 'problem-solving' && (
-    <>
-      <p>These resources support everyday and emotional problem solving.</p>
-      <ol>
-        <li>What is the problem?</li><li>What could we do?</li>
-        <li>What might be good or tricky?</li><li>What shall we try?</li>
-      </ol>
-      <p>We don’t have to know what to do straight away — we can learn how to work it out.</p>
-    </>
-  )}
-  <section>
-    <h2>Explore the resources</h2>
-    {categoryResources.map((resource) => <ResourceCard resource={resource} />)}
-  </section>
+<BaseLayout title={category.title} description={category.description} wide>
+  <PageIntro eyebrow="Explore a topic" title={category.title} lead={category.description} backHref="/resources/">
+    <div class="intro-facts"><span><Icon name="people" /> Ages 8–11, with an adult alongside</span><span><Icon name="document" /> Printable PDFs</span></div>
+  </PageIntro>
+  <div class="container catalogue category-catalogue">
+    <TopicNav current={category.id} />
+    <section class="catalogue-section" aria-labelledby="topic-resources-heading">
+      <div class="catalogue-heading"><div><p class="eyebrow">Tools for shared understanding</p><h2 id="topic-resources-heading">Explore the resources</h2></div><p class="catalogue-count">{categoryResources.length} {categoryResources.length === 1 ? 'resource' : 'resources'} in this collection</p></div>
+      <div class:list={['resource-grid', { 'resource-grid-single': categoryResources.length === 1 }]}>{categoryResources.map((resource) => <ResourceCard resource={resource} />)}</div>
+      <p class="marketplace-note">Purchases take place on Etsy. Check each listing for contents and use permissions.</p>
+    </section>
+    <section class="conversation-panel" aria-labelledby="conversation-heading"><div><p class="eyebrow">A conversation, not a checklist</p><h2 id="conversation-heading">{guide.title}</h2><p>{guide.text}</p><a class="text-link" href="/our-approach/">Explore our approach <Icon name="arrow" /></a></div><div class="prompt-panel"><p class="prompt-label">You could begin with…</p><ul>{guide.prompts.map((prompt) => <li>{prompt}</li>)}</ul></div></section>
+  </div>
+  <PageCTA title="Using these in a school or professional setting?" text="Check the permissions for your setting with the seller before purchasing." href="/contact/#school-enquiries" label="School enquiries" />
 </BaseLayout>

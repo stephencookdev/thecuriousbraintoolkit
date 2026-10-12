@@ -1,17 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import PageCTA from '../../components/PageCTA.astro';
 import Framework from '../../components/Framework.astro';
+import Icon from '../../components/Icon.astro';
 ---
-<BaseLayout title="Our psychology-informed approach" description="Discover Notice, Understand, Explore and Practise: a curious, neurodiversity-affirming approach.">
-  <h1>Curiosity before correction</h1>
-  <p>The Curious Brain Toolkit does not assume that the child is the problem or that every child needs the same strategy.</p>
-  <section>
-    <h2>Notice → Understand → Explore → Practise</h2>
-    <Framework />
-  </section>
-  <section>
-    <h2>Understanding before strategies</h2>
-    <p>Consider the task, environment, predictability, relationships and support around the child, alongside their own experience.</p>
-  </section>
-  <a href="/resources/">Explore resources that use this approach</a>
+<BaseLayout title="Our psychology-informed approach" description="A practical way to notice what is happening, build understanding, explore options and practise manageable next steps together." wide>
+  <PageIntro eyebrow="The Curious Brain approach" title="Curiosity before correction." lead="When a child is finding something difficult, understanding their experience is a helpful place to begin."><p class="intro-support">A simple conversation framework for parents, teachers and other professionals, with the child’s perspective at its heart.</p></PageIntro>
+  <section class="section"><div class="container"><div class="section-heading approach-heading"><p class="eyebrow">Four connected steps</p><h2>Notice. Understand. Explore. Practise.</h2><p>You can move through these steps in order, pause on one, or return to an earlier question. Follow the child’s pace and use words that make sense to them.</p></div><Framework /></div></section>
+  <section class="example-section"><div class="container conversation-panel"><div><p class="eyebrow">Putting curiosity into practice</p><h2>“This feels too hard.”</h2><p>A child is finding a task difficult. Rather than moving straight to a solution, you might begin with a conversation.</p><p>This is an example to adapt, not a script or a right answer. Sometimes the useful next step is to pause and return later.</p></div><ol class="example-steps"><li><strong>Notice</strong><p>“What feels tricky about this?” Listen to the child’s account.</p></li><li><strong>Understand</strong><p>Explore their thoughts and feelings, alongside the task, surroundings and available support.</p></li><li><strong>Explore</strong><p>“What might make this a little easier?” Consider options together.</p></li><li><strong>Practise</strong><p>Try one manageable idea, notice what happens and adjust if needed.</p></li></ol></div></section>
+  <section class="section"><div class="container guidance-grid"><div><p class="eyebrow">The adult alongside</p><h2>Make space for their experience.</h2></div><div class="guidance-copy"><p>Listen without rushing to correct or solve. Offer choices rather than assuming you already know what will help, and include the child in deciding what to try.</p><p>Consider the situation around them, too: the task, predictability, relationships and support can matter alongside their own thoughts and feelings.</p><p class="quiet-note"><Icon name="book" /> These are educational conversation tools. They do not replace individual assessment, treatment or advice from a qualified professional when that is needed.</p></div></div></section>
+  <PageCTA title="Find a starting point for your next conversation." />
 </BaseLayout>

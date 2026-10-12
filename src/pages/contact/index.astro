@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import Icon from '../../components/Icon.astro';
 import { site } from '../../data/site';
 ---
-<BaseLayout title="Contact" description="Contact Curious Brain about school, professional, licensing and business enquiries.">
-  <h1>Contact Curious Brain</h1>
-  <p>For school enquiries, professional questions, licensing and business contact.</p>
-  {site.contactEmail ? <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> : <p>Please visit <a href={site.etsyUrl!}>the Curious Brain Etsy shop</a> to contact the seller about your enquiry.</p>}
-  <p>This website does not provide emergency or individual clinical advice.</p>
+<BaseLayout title="Contact Curious Brain" description="Ask about Curious Brain resources, school use or licensing through the Etsy shop." wide>
+  <PageIntro eyebrow="Get in touch" title="Let’s find the right next step." lead="Have a question about a resource or using the toolkit in your setting? Contact the Curious Brain seller through Etsy." />
+  <section class="section"><div class="container contact-grid">
+    <div class="contact-channel"><Icon name="thought" /><h2>Send a message through Etsy.</h2><p>Open the Curious Brain shop and use Etsy’s message-the-seller option. If your question is about an existing order, include the order details in your Etsy message.</p><a class="button button-primary" href={site.etsyUrl}>Open the Etsy shop <Icon name="external" /></a><p class="channel-note">Messaging and any reply take place on Etsy.</p>{site.instagramUrl && <div class="contact-social"><p>For news from Curious Brain</p><a class="text-link" href={site.instagramUrl}>Follow on Instagram <Icon name="external" /></a></div>}</div>
+    <div class="enquiry-guidance"><section id="school-enquiries" aria-labelledby="school-heading"><p class="eyebrow">Schools & professionals</p><h2 id="school-heading">Tell us about your setting.</h2><p>Before using a resource with a class, group or team, ask the seller to confirm the permissions you need. A helpful enquiry includes:</p><ul class="check-list"><li><Icon name="check" /> The resource or topic you’re interested in</li><li><Icon name="check" /> Your setting and who will use it</li><li><Icon name="check" /> The number of adults or children involved</li><li><Icon name="check" /> How you would like to print, use or share it</li></ul><p class="quiet-note">School licence terms and a separate school checkout are not published here. The seller can confirm the options before you purchase.</p><div class="school-contact-actions"><a class="button button-primary" href={site.etsyUrl}>Ask about school use on Etsy <Icon name="external" /></a><a class="text-link" href="/resource-licensing/">About use permissions <Icon name="arrow" /></a></div></section></div>
+  </div></section>
+  <div class="container contact-boundary"><Icon name="heart" /><p>Please keep enquiries focused on the resources and avoid sending sensitive information about a child. This website does not provide emergency or individual clinical advice.</p></div>
 </BaseLayout>

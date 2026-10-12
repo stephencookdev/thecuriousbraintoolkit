@@ -3,11 +3,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
 import '../styles/global.css';
+import '../styles/inner-pages.css';
 import '@fontsource/nunito/latin-600.css';
 import '@fontsource/nunito/latin-700.css';
 import '@fontsource/nunito/latin-800.css';
-interface Props { title: string; description: string; home?: boolean; }
-const { title, description, home = false } = Astro.props;
+interface Props { title: string; description: string; home?: boolean; wide?: boolean; }
+const { title, description, home = false, wide = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en-GB">
@@ -19,13 +20,12 @@ const { title, description, home = false } = Astro.props;
     <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
     <title>{title} | {site.name}</title>
     <meta name="description" content={description} />
-    <!-- Remove when final content, links and policies are ready to launch. -->
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
-    <main id="main-content" class:list={{ 'content-page': !home }}><slot /></main>
+    <main id="main-content" class:list={{ 'content-page': !home && !wide, 'inner-page': wide }}><slot /></main>
     <Footer />
   </body>
 </html>

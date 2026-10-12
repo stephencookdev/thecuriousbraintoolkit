@@ -1,0 +1,17 @@
+---
+interface Props { eyebrow: string; title: string; lead: string; backHref?: string; backLabel?: string; }
+const { eyebrow, title, lead, backHref, backLabel = 'All resources' } = Astro.props;
+const hasAside = Astro.slots.has('aside');
+---
+<section class="page-intro">
+  <div class:list={['container', 'page-intro-inner', { 'page-intro-split': hasAside }]}>
+    <div>
+      {backHref && <a class="back-link" href={backHref}><span aria-hidden="true">←</span> {backLabel}</a>}
+      <p class="eyebrow"><span class="accent-dash" aria-hidden="true"></span>{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="page-lead">{lead}</p>
+      <slot />
+    </div>
+    {hasAside && <div class="page-intro-aside"><slot name="aside" /></div>}
+  </div>
+</section>

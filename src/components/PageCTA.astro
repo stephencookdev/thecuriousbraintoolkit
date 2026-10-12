@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+interface Props { title?: string; text?: string; href?: string; label?: string; }
+const { title = 'A little understanding can be a good start.', text = 'Explore practical tools for conversations with children, at home, at school and in your work.', href = '/resources/', label = 'Explore the resources' } = Astro.props;
+---
+<section class="page-cta"><div class="container page-cta-inner"><div><p class="eyebrow">Take the next step</p><h2>{title}</h2><p>{text}</p></div><a class="button button-primary" href={href}>{label}<Icon name="arrow" /></a></div></section>

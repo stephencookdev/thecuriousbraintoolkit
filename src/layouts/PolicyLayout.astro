@@ -1,9 +1,11 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-interface Props { title: string; }
-const { title } = Astro.props;
+import PageIntro from '../components/PageIntro.astro';
+import { policyPages } from '../data/site';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
 ---
-<BaseLayout title={title} description={`${title} for The Curious Brain Toolkit.`}>
-  <h1>{title}</h1>
-  <p>Approved {title.toLowerCase()} wording to be supplied before launch.</p>
+<BaseLayout title={title} description={description} wide>
+  <PageIntro eyebrow="Useful information" title={title} lead={description} />
+  <div class="container policy-layout"><nav class="policy-nav" aria-label="Information pages"><p class="footer-label">On this website</p><ul>{policyPages.map((page) => <li><a href={`/${page.slug}/`} aria-current={page.title === title ? 'page' : undefined}>{page.title}</a></li>)}<li><a href="/contact/">Contact Curious Brain</a></li></ul></nav><article class="policy-page" aria-label={title}><slot /></article></div>
 </BaseLayout>

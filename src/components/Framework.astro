@@ -1,6 +1,9 @@
 ---
 import { framework } from '../data/site';
+import Icon from './Icon.astro';
+const icons = ['eye', 'understand', 'explore', 'practise'];
+const prompts = ['What do you notice?', 'What might be behind this?', 'What could help?', 'What shall we try?'];
 ---
-<ol>
-  {framework.map((step) => <li><strong>{step.name}</strong>: {step.description}</li>)}
+<ol class="approach-steps">
+  {framework.map((step, i) => <li><div class="step-top"><Icon name={icons[i]} /><span>{`0${i + 1}`}</span></div><h3>{step.name}</h3><p>{step.description}</p><p class="step-prompt">{prompts[i]}</p></li>)}
 </ol>

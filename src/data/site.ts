@@ -1,9 +1,9 @@
-// Replace null values with confirmed destinations. Never invent shop URLs.
+// Add only confirmed contact and social destinations.
 export const site = {
   name: 'The Curious Brain Toolkit™',
-  tagline: 'Evidence-based psychology, made curious and accessible.',
+  tagline: 'Psychology-informed tools, made curious and accessible.',
   etsyUrl: 'https://www.etsy.com/uk/shop/CuriousBrainToolkit' as string | null,
-  instagramUrl: null as string | null,
+  instagramUrl: 'https://www.instagram.com/thecuriousbraintoolkit/' as string | null,
   contactEmail: null as string | null,
 };
 

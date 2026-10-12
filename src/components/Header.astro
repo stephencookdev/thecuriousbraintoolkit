@@ -1,19 +1,23 @@
 ---
 import { navigation, site } from '../data/site';
+import { categories } from '../data/resources';
 import Icon from './Icon.astro';
 const currentPath = Astro.url.pathname;
+const isCurrentPage = (href: string) => currentPath === href || (
+  href === '/resources/' && (currentPath === '/free-resources/' || categories.some((category) => category.path === currentPath))
+);
 ---
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label={`${site.name} — home`}><img src="/images/curious-brain-wordmark.webp" alt="The Curious Brain Toolkit" width="600" height="212" /></a>
     <nav class="desktop-nav" aria-label="Main navigation"><ul>
-      {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={currentPath === href ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
+      {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={isCurrentPage(href) ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
     </ul></nav>
     <a class="button button-primary header-cta" href="/resources/">Explore resources <Icon name="arrow" /></a>
     <details class="mobile-menu">
       <summary aria-label="Open navigation"><Icon name="menu" /><span>Menu</span></summary>
       <nav aria-label="Mobile navigation"><ul>
-        {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={currentPath === href ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
+        {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={isCurrentPage(href) ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
         <li><a href="/resources/">Explore resources →</a></li>
       </ul></nav>
     </details>

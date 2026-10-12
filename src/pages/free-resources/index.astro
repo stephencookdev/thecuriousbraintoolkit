@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import PageCTA from '../../components/PageCTA.astro';
+import Icon from '../../components/Icon.astro';
 ---
-<BaseLayout title="Free emotional wellbeing resources" description="Find out about free resources from Curious Brain and explore the published toolkits.">
-  <h1>Try the Curious Brain approach</h1>
-  <p>There are no free downloads available on this website at present.</p>
-  <a href="/resources/">Explore the published toolkits and cards</a>
-  <a href="/worry-anxiety-resources-children/">Explore related worry and anxiety resources</a>
+<BaseLayout title="Free resources" description="No free Curious Brain downloads are currently available. Discover the approach and browse the published printable resources." wide>
+  <PageIntro eyebrow="Resource availability" title="Looking for a free resource?" lead="There are no free downloads available on this website at present. The published toolkits and cards are paid printable resources." />
+  <section class="section"><div class="container availability-grid"><article class="info-card"><Icon name="book" /><h2>Get to know the approach.</h2><p>Read about Notice, Understand, Explore and Practise, with an example of how a curious conversation might begin.</p><a class="text-link" href="/our-approach/">Read our approach <Icon name="arrow" /></a></article><article class="info-card"><Icon name="search" /><h2>Explore the collection.</h2><p>Browse the resources by topic, then check the individual Etsy listing for contents, pricing and use permissions.</p><a class="text-link" href="/resources/">Browse all resources <Icon name="arrow" /></a></article></div></section>
+  <PageCTA title="Choosing for a school or professional setting?" text="Ask about the permissions for your setting before you purchase." href="/contact/#school-enquiries" label="School enquiries" />
 </BaseLayout>
