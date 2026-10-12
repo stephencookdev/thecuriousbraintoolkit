@@ -1,0 +1,21 @@
+---
+import type { Resource } from '../data/resources';
+interface Props { resource: Resource; }
+const { resource } = Astro.props;
+---
+<article>
+  <h3>{resource.title}</h3>
+  <!-- Add the genuine cover and meaningful alternative text here. -->
+  <p>{resource.description}</p>
+  <p>Ages 8–11 · Printable PDF{resource.free ? ' · Free resource' : ''}</p>
+  {resource.free ? (
+    resource.downloadUrl
+      ? <a href={resource.downloadUrl} download>Download {resource.title}</a>
+      : <p>Download file to be supplied.</p>
+  ) : (
+    <>
+      {resource.etsyUrl ? <a href={resource.etsyUrl}>View on Etsy</a> : <p>Etsy listing to be supplied.</p>}
+      {resource.tesUrl && <a href={resource.tesUrl}>School purchasing on TES</a>}
+    </>
+  )}
+</article>

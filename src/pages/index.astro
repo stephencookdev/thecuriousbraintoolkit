@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Framework from '../components/Framework.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import { categories, resources } from '../data/resources';
+const freeResource = resources.find((resource) => resource.id === 'safety-alarm-cards')!;
+---
+<BaseLayout title="Child psychology resources for ages 8–11" description="Practical printable psychology toolkits for children and the parents and professionals who support them.">
+  <section aria-labelledby="home-heading">
+    <p>Psychology-informed resources for children aged 8–11</p>
+    <h1 id="home-heading">Help children understand their thoughts, feelings and what might help</h1>
+    <p>Practical printable toolkits for emotional literacy, worry, anxiety and everyday problem solving.</p>
+    <p>Created by Clinical Psychologist Dr Sarah Cook for use in schools, clinical work and at home.</p>
+    <a href="/resources/">Explore the toolkits</a>
+    <a href="/free-resources/">Try a free resource</a>
+  </section>
+  <section aria-labelledby="credibility-heading">
+    <h2 id="credibility-heading">Created with understanding in mind</h2>
+    <ul>
+      <li>Created by a Clinical Psychologist</li>
+      <li>Neurodiversity-affirming</li>
+      <li>Designed for ages 8–11</li>
+      <li>Practical printable resources</li>
+    </ul>
+  </section>
+  <section aria-labelledby="pathways-heading">
+    <h2 id="pathways-heading">Where would you like to begin?</h2>
+    {categories.map((category) => (
+      <article>
+        <h3><a href={category.path}>{category.label}</a></h3>
+        <p>{category.description}</p>
+      </article>
+    ))}
+  </section>
+  <section aria-labelledby="approach-heading">
+    <h2 id="approach-heading">Understanding comes before choosing what might help</h2>
+    <p>Slow down, notice what is happening and develop a shared understanding before exploring possible next steps.</p>
+    <Framework />
+    <a href="/our-approach/">Discover the Curious Brain approach</a>
+  </section>
+  <section aria-labelledby="free-heading">
+    <h2 id="free-heading">Try the Curious Brain approach</h2>
+    <ResourceCard resource={freeResource} />
+    <a href="/free-resources/">Browse all free resources</a>
+  </section>
+  <section aria-labelledby="creator-heading">
+    <h2 id="creator-heading">Created by Dr Sarah Cook</h2>
+    <p>Psychology made understandable and practical for children and the adults who support them.</p>
+    <a href="/about/">Meet Sarah and learn more</a>
+  </section>
+  <section aria-labelledby="closing-heading">
+    <h2 id="closing-heading">Find a useful place to start</h2>
+    <a href="/resources/">Explore all resources</a>
+  </section>
+</BaseLayout>

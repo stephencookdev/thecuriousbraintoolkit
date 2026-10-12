@@ -1,0 +1,6 @@
+---
+import { framework } from '../data/site';
+---
+<ol>
+  {framework.map((step) => <li><strong>{step.name}</strong>: {step.description}</li>)}
+</ol>

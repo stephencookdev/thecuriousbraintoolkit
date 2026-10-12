@@ -1,0 +1,15 @@
+---
+import { navigation, site } from '../data/site';
+const currentPath = Astro.url.pathname;
+---
+<header>
+  <a href="/">{site.name}</a>
+  <nav aria-label="Main navigation">
+    <ul>
+      {navigation.map(({ label, href }) => (
+        <li><a href={href} aria-current={currentPath === href ? 'page' : undefined}>{label}</a></li>
+      ))}
+    </ul>
+  </nav>
+  {site.etsyUrl ? <a href={site.etsyUrl}>Shop on Etsy</a> : <p>Etsy shop link to be supplied.</p>}
+</header>

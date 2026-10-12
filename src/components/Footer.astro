@@ -1,0 +1,16 @@
+---
+import { navigation, policyPages, site } from '../data/site';
+---
+<footer>
+  <p>{site.name}</p>
+  <p>{site.tagline}</p>
+  <nav aria-label="Footer navigation">
+    <ul>
+      {navigation.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+      <li><a href="/contact/">Contact</a></li>
+      {policyPages.map(({ slug, title }) => <li><a href={`/${slug}/`}>{title}</a></li>)}
+      {site.etsyUrl && <li><a href={site.etsyUrl}>Etsy shop</a></li>}
+      {site.instagramUrl && <li><a href={site.instagramUrl}>Follow on Instagram</a></li>}
+    </ul>
+  </nav>
+</footer>

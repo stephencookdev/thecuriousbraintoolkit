@@ -1,0 +1,9 @@
+---
+import BaseLayout from './BaseLayout.astro';
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<BaseLayout title={title} description={`${title} for The Curious Brain Toolkit.`}>
+  <h1>{title}</h1>
+  <p>Approved {title.toLowerCase()} wording to be supplied before launch.</p>
+</BaseLayout>

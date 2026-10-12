@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { categories, resources } from '../../data/resources';
+---
+<BaseLayout title="Psychology-informed resources for children" description="Explore printable toolkits for emotional understanding, worry, anxiety and everyday problem solving.">
+  <h1>Find the right place to begin</h1>
+  <p>Connected printable psychology resources for children aged 8–11 and the adults who support them.</p>
+  <nav aria-label="Resource categories">
+    <ul>{categories.map((category) => <li><a href={`#${category.id}`}>{category.label}</a></li>)}</ul>
+  </nav>
+  {categories.map((category) => (
+    <section id={category.id} aria-labelledby={`${category.id}-heading`}>
+      <h2 id={`${category.id}-heading`}><a href={category.path}>{category.label}</a></h2>
+      <p>{category.description}</p>
+      {resources.filter((resource) => resource.category === category.id && !resource.free).map((resource) => <ResourceCard resource={resource} />)}
+    </section>
+  ))}
+  <section>
+    <h2>Free resources</h2>
+    <a href="/free-resources/">Try a free Curious Brain resource</a>
+  </section>
+</BaseLayout>
