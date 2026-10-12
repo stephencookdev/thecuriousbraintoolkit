@@ -1,0 +1,18 @@
+---
+const sheets = [
+  { name: 'thoughts-activity', className: 'sheet-thoughts-activity' },
+  { name: 'safety-alarm-cover', className: 'sheet-safety' },
+  { name: 'feelings-activity', className: 'sheet-feelings-activity' },
+  { name: 'thoughts-cover', className: 'sheet-thoughts' },
+  { name: 'feelings-cover', className: 'sheet-feelings' },
+];
+---
+<div class="hero-product hero-deck" role="img" aria-label="Understanding Thoughts, Understanding Feelings and My Safety Alarm toolkit covers, with sample activity pages">
+  {sheets.map(({ name, className }) => (
+    <div class={`hero-sheet ${className}`}>
+      <div class="hero-sheet-scroll"><div class="hero-sheet-enter">
+        <img src={`/images/hero/${name}-v2.webp`} alt="" width="200" height="285" fetchpriority="high" />
+      </div></div>
+    </div>
+  ))}
+</div>

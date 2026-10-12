@@ -5,6 +5,6 @@ import { site } from '../../data/site';
 <BaseLayout title="Contact" description="Contact Curious Brain about school, professional, licensing and business enquiries.">
   <h1>Contact Curious Brain</h1>
   <p>For school enquiries, professional questions, licensing and business contact.</p>
-  {site.contactEmail ? <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> : <p>Contact email address to be supplied.</p>}
+  {site.contactEmail ? <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> : <p>Please visit <a href={site.etsyUrl!}>the Curious Brain Etsy shop</a> to contact the seller about your enquiry.</p>}
   <p>This website does not provide emergency or individual clinical advice.</p>
 </BaseLayout>

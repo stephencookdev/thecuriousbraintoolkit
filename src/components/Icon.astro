@@ -1,0 +1,16 @@
+---
+interface Props { name: string; class?: string; }
+const { name, class: className } = Astro.props;
+// Official Heroicons v2.2.0, MIT licensed; SVGs are inlined at build time.
+const files = import.meta.glob('../assets/icons/*.svg', { query: '?raw', import: 'default', eager: true });
+const names: Record<string, string> = {
+  arrow: 'arrow-right', external: 'arrow-top-right-on-square', thought: 'chat-bubble-left-right',
+  cloud: 'cloud', bell: 'cloud', bulb: 'light-bulb', book: 'book-open', leaf: 'sparkles',
+  check: 'check-circle', print: 'printer', search: 'magnifying-glass', menu: 'bars-3',
+  academic: 'academic-cap', people: 'user-group', document: 'document-text',
+  eye: 'eye', explore: 'magnifying-glass', practise: 'cog-6-tooth', understand: 'sparkles', heart: 'heart',
+};
+const source = files[`../assets/icons/${names[name] ?? 'sparkles'}.svg`] as string;
+const paths = source.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+---
+<svg class={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false" set:html={paths} />

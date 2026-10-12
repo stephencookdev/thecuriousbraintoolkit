@@ -2,7 +2,7 @@
 export const site = {
   name: 'The Curious Brain Toolkit™',
   tagline: 'Evidence-based psychology, made curious and accessible.',
-  etsyUrl: null as string | null,
+  etsyUrl: 'https://www.etsy.com/uk/shop/CuriousBrainToolkit' as string | null,
   instagramUrl: null as string | null,
   contactEmail: null as string | null,
 };
@@ -10,7 +10,6 @@ export const site = {
 export const navigation = [
   { label: 'Home', href: '/' },
   { label: 'Resources', href: '/resources/' },
-  { label: 'Free Resources', href: '/free-resources/' },
   { label: 'Our Approach', href: '/our-approach/' },
   { label: 'About Sarah', href: '/about/' },
 ];

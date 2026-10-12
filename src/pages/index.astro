@@ -1,55 +1,60 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Framework from '../components/Framework.astro';
 import ResourceCard from '../components/ResourceCard.astro';
+import Icon from '../components/Icon.astro';
+import HeroArtwork from '../components/HeroArtwork.astro';
+import ProductArtwork from '../components/ProductArtwork.astro';
 import { categories, resources } from '../data/resources';
-const freeResource = resources.find((resource) => resource.id === 'safety-alarm-cards')!;
+import { framework } from '../data/site';
+const bundle = resources.find((resource) => resource.id === 'thoughts-feelings-bundle')!;
+const featured = ['thoughts', 'feelings', 'safety-alarm'].map((id) => resources.find((resource) => resource.id === id)!);
+const pathwayIcons = ['heart', 'cloud', 'bulb'];
+const pathwayLabels = ['Emotional understanding', 'Worry and anxiety', 'Everyday problem solving'];
+const frameworkIcons = ['eye', 'understand', 'explore', 'practise'];
+const copingCards = resources.find((resource) => resource.id === 'safety-alarm-cards')!;
 ---
-<BaseLayout title="Child psychology resources for ages 8–11" description="Practical printable psychology toolkits for children and the parents and professionals who support them.">
-  <section aria-labelledby="home-heading">
-    <p>Psychology-informed resources for children aged 8–11</p>
-    <h1 id="home-heading">Help children understand their thoughts, feelings and what might help</h1>
-    <p>Practical printable toolkits for emotional literacy, worry, anxiety and everyday problem solving.</p>
-    <p>Created by Clinical Psychologist Dr Sarah Cook for use in schools, clinical work and at home.</p>
-    <a href="/resources/">Explore the toolkits</a>
-    <a href="/free-resources/">Try a free resource</a>
+<BaseLayout title="Child psychology resources for ages 8–11" description="Practical printable psychology toolkits for children and the parents and professionals who support them." home>
+  <section class="hero" aria-labelledby="home-heading">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="accent-dash" aria-hidden="true"></span> Psychology-informed. Curiosity-led.</p>
+        <h1 id="home-heading">Understanding<br class="desktop-break" /> comes first.</h1>
+        <p class="hero-intro">Help children make sense of their thoughts, feelings and what might help.</p>
+        <p class="hero-description">Practical, printable psychology toolkits for children aged 8–11 and the parents and professionals who support them.</p>
+        <div class="hero-actions"><a class="button button-primary" href="/resources/">Explore the resources <Icon name="arrow" /></a><a class="button button-secondary" href="/our-approach/">Our approach</a></div>
+        <p class="creator-note">Created by <strong>Dr Sarah Cook</strong><br />Clinical Psychologist</p>
+      </div>
+      <figure class="hero-art">
+        <a href="/emotional-literacy-resources-ks2/" aria-label="Explore Understanding Thoughts and Feelings"><HeroArtwork /></a>
+        <img class="hero-mascot" src="/images/curious-brain-mascot.webp" alt="" width="280" height="272" />
+      </figure>
+    </div>
   </section>
-  <section aria-labelledby="credibility-heading">
-    <h2 id="credibility-heading">Created with understanding in mind</h2>
-    <ul>
-      <li>Created by a Clinical Psychologist</li>
-      <li>Neurodiversity-affirming</li>
-      <li>Designed for ages 8–11</li>
-      <li>Practical printable resources</li>
-    </ul>
-  </section>
-  <section aria-labelledby="pathways-heading">
+  <div class="trust-strip"><ul class="container">
+    <li><Icon name="academic" /><span>Created by a <strong>Clinical Psychologist</strong></span></li>
+    <li><Icon name="people" /><span>Designed for <strong>ages 8–11</strong></span></li>
+    <li><Icon name="document" /><span>Practical <strong>printable PDFs</strong></span></li>
+  </ul></div>
+  <section class="pathways" aria-labelledby="pathways-heading"><div class="container">
     <h2 id="pathways-heading">Where would you like to begin?</h2>
-    {categories.map((category) => (
-      <article>
-        <h3><a href={category.path}>{category.label}</a></h3>
-        <p>{category.description}</p>
-      </article>
-    ))}
-  </section>
-  <section aria-labelledby="approach-heading">
-    <h2 id="approach-heading">Understanding comes before choosing what might help</h2>
-    <p>Slow down, notice what is happening and develop a shared understanding before exploring possible next steps.</p>
-    <Framework />
-    <a href="/our-approach/">Discover the Curious Brain approach</a>
-  </section>
-  <section aria-labelledby="free-heading">
-    <h2 id="free-heading">Try the Curious Brain approach</h2>
-    <ResourceCard resource={freeResource} />
-    <a href="/free-resources/">Browse all free resources</a>
-  </section>
-  <section aria-labelledby="creator-heading">
-    <h2 id="creator-heading">Created by Dr Sarah Cook</h2>
-    <p>Psychology made understandable and practical for children and the adults who support them.</p>
-    <a href="/about/">Meet Sarah and learn more</a>
-  </section>
-  <section aria-labelledby="closing-heading">
-    <h2 id="closing-heading">Find a useful place to start</h2>
-    <a href="/resources/">Explore all resources</a>
-  </section>
+    <div class="pathway-grid">{categories.map((category, i) => <a class={`pathway pathway-${i}`} href={category.path}><span class="pathway-icon"><Icon name={pathwayIcons[i]} /></span><h3>{pathwayLabels[i]}</h3><Icon name="arrow" /></a>)}</div>
+  </div></section>
+  <section class="approach-section" aria-labelledby="approach-heading"><div class="container approach-banner">
+    <div class="framework-banner"><h2 id="approach-heading">A simple framework for big conversations</h2><ol class="framework-grid">{framework.map((step, i) => <li><a href="/our-approach/" aria-label={`${step.name}: ${step.description}`}><Icon name={frameworkIcons[i]} /><span>{step.name}</span></a>{i < framework.length - 1 && <Icon name="arrow" class="framework-arrow" />}</li>)}</ol></div>
+    <article class="support-banner"><a class="support-art" href={copingCards.etsyUrl!} aria-label="View Safety Alarm Coping Cards on Etsy"><img src={copingCards.image} alt={copingCards.imageAlt} width="600" height="600" /></a><div><p class="eyebrow">A practical next step</p><h3>{copingCards.title}</h3><p>Prompts to explore what support might help.</p><a class="button button-primary" href={copingCards.etsyUrl!}>Explore cards on Etsy <Icon name="arrow" /></a></div></article>
+  </div></section>
+  <section class="section featured-section" aria-labelledby="featured-heading"><div class="container">
+    <div class="section-heading section-heading-split"><div><p class="eyebrow">Tools for shared understanding</p><h2 id="featured-heading">Small steps. A place to begin.</h2></div><a class="text-link" href="/resources/">See all resources <Icon name="arrow" /></a></div>
+    <article class="bundle-feature">
+      <a class="bundle-art" href={bundle.etsyUrl!} aria-label="View the Thoughts and Feelings bundle on Etsy"><ProductArtwork id={bundle.id} title={bundle.title} bundle /></a>
+      <div class="bundle-copy"><p class="eyebrow">Two connected toolkits</p><h3>{bundle.title}</h3><p>{bundle.description}</p><ul class="bundle-details"><li><Icon name="check" /> Learn pages & explore activities</li><li><Icon name="check" /> Guidance for the adults alongside them</li><li><Icon name="check" /> Ages 8–11 · Printable PDFs</li></ul><a class="button button-primary" href={bundle.etsyUrl!}>Individual use on Etsy <Icon name="external" /></a><a class="text-link school-enquiry" href="/contact/">School licence enquiries <Icon name="arrow" /></a></div>
+    </article>
+    <div class="featured-grid">{featured.map((resource) => <ResourceCard resource={resource} />)}</div>
+    <p class="marketplace-note">Purchases are completed on Etsy. For school licensing, <a href="/contact/">get in touch</a>.</p>
+  </div></section>
+  <section class="section creator-section" aria-labelledby="creator-heading"><div class="container creator-grid">
+    <div class="creator-heading"><p class="eyebrow">Meet the mind behind the toolkit</p><h2 id="creator-heading">Created with care.<br />Grounded in psychology.</h2></div>
+    <div class="creator-copy"><h3>Hello, I’m Dr Sarah Cook.</h3><p>I’m an HCPC-registered Clinical Psychologist with experience supporting children, young people, families and schools.</p><p>I created The Curious Brain Toolkit to make psychological ideas understandable, practical and useful—without treating the child as the problem or expecting one strategy to work for everyone.</p><a class="text-link" href="/about/">A little more about Sarah <Icon name="arrow" /></a></div>
+  </div></section>
+  <section class="closing-section" aria-labelledby="closing-heading"><div class="container"><Icon name="thought" /><h2 id="closing-heading">Let’s start with understanding.</h2><p>Find practical tools for curious conversations, at home, at school and in your work.</p><a class="button button-primary" href="/resources/">Explore the resources <Icon name="arrow" /></a></div></section>
 </BaseLayout>

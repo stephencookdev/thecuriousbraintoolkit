@@ -1,16 +1,12 @@
 ---
 import { navigation, policyPages, site } from '../data/site';
 ---
-<footer>
-  <p>{site.name}</p>
-  <p>{site.tagline}</p>
-  <nav aria-label="Footer navigation">
-    <ul>
-      {navigation.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
-      <li><a href="/contact/">Contact</a></li>
-      {policyPages.map(({ slug, title }) => <li><a href={`/${slug}/`}>{title}</a></li>)}
-      {site.etsyUrl && <li><a href={site.etsyUrl}>Etsy shop</a></li>}
-      {site.instagramUrl && <li><a href={site.instagramUrl}>Follow on Instagram</a></li>}
-    </ul>
-  </nav>
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand"><a href="/"><img src="/images/curious-brain-wordmark.webp" alt="The Curious Brain Toolkit" width="600" height="212" loading="lazy" /></a><p>{site.tagline}</p><p class="small">For children aged 8–11.<br />And the adults alongside them.</p></div>
+    <nav aria-label="Footer navigation"><p class="footer-label">Explore</p><ul>{navigation.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}</ul></nav>
+    <nav aria-label="Information"><p class="footer-label">Useful information</p><ul><li><a href="/contact/">Contact</a></li>{policyPages.map(({ slug, title }) => <li><a href={`/${slug}/`}>{title}</a></li>)}</ul></nav>
+    <div><p class="footer-label">Find the resources</p><p>Printable tools to explore together, at home or in your work.</p>{site.etsyUrl && <a class="text-link" href={site.etsyUrl}>Visit the Etsy shop ↗</a>}{site.instagramUrl && <p><a href={site.instagramUrl}>Follow on Instagram ↗</a></p>}</div>
+  </div>
+  <div class="container footer-bottom"><p>© {new Date().getFullYear()} The Curious Brain Toolkit™</p><p>Created by Dr Sarah Cook, Clinical Psychologist</p></div>
 </footer>

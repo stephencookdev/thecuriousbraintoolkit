@@ -1,14 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ResourceCard from '../../components/ResourceCard.astro';
-import { resources } from '../../data/resources';
 ---
-<BaseLayout title="Free emotional wellbeing resources" description="Try the Curious Brain approach with selected free printable psychology resources.">
+<BaseLayout title="Free emotional wellbeing resources" description="Find out about free resources from Curious Brain and explore the published toolkits.">
   <h1>Try the Curious Brain approach</h1>
-  <p>Explore a practical resource with a child and build shared understanding.</p>
-  <section>
-    <h2>Free printable resources</h2>
-    {resources.filter((resource) => resource.free).map((resource) => <ResourceCard resource={resource} />)}
-  </section>
+  <p>There are no free downloads available on this website at present.</p>
+  <a href="/resources/">Explore the published toolkits and cards</a>
   <a href="/worry-anxiety-resources-children/">Explore related worry and anxiety resources</a>
 </BaseLayout>
