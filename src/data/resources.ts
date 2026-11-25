@@ -11,7 +11,7 @@ export const categories = [
     path: '/worry-anxiety-resources-children/',
     title: 'Worry and anxiety resources for children',
     label: 'Explore worry and anxiety',
-    description: 'Explore resources that introduce the brain’s Safety Alarm and offer prompts for talking about worry and possible support.',
+    description: 'Explore the brain’s Safety Alarm, make time for worries and try smaller steps when worry makes things harder.',
   },
   {
     id: 'problem-solving',
@@ -85,8 +85,8 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4563863872/child-anxiety-toolkit-o-understanding-my",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/products/safety-alarm-v2.webp",
-    "imageAlt": "Understanding My Safety Alarm: reconstructed preview of toolkit pages and activities."
+    "image": "/images/products/safety-alarm.webp",
+    "imageAlt": "Understanding My Safety Alarm: preview of the cover and updated toolkit pages."
   },
   {
     "id": "safety-alarm-cards",
@@ -99,6 +99,30 @@ export const resources: Resource[] = [
     "downloadUrl": null,
     "image": "/images/safety-alarm-cards.webp",
     "imageAlt": "My Safety Alarm Coping Cards: genuine listing artwork with toolkit pages and activities."
+  },
+  {
+    "id": "worry-time",
+    "title": "Worry Time",
+    "category": "worry-anxiety",
+    "description": "A practical resource to help children explore their worries and set them aside until a planned Worry Time.",
+    "free": false,
+    "etsyUrl": "https://www.etsy.com/uk/listing/4596186205/worry-time-for-kids-ages-811-o-anxiety",
+    "tesUrl": null,
+    "downloadUrl": null,
+    "image": "/images/products/worry-time.webp",
+    "imageAlt": "Worry Time: preview of the cover and printable worksheets."
+  },
+  {
+    "id": "worry-and-avoidance",
+    "title": "Worry and Avoidance – Have a Go",
+    "category": "worry-anxiety",
+    "description": "A practical resource to help children take manageable smaller steps when worry makes them want to stay away from something important.",
+    "free": false,
+    "etsyUrl": "https://www.etsy.com/uk/listing/4599583258/child-anxiety-worksheets-o-worry",
+    "tesUrl": null,
+    "downloadUrl": null,
+    "image": "/images/products/worry-and-avoidance.webp",
+    "imageAlt": "Worry and Avoidance – Have a Go: preview of the cover and printable worksheets."
   },
   {
     "id": "problem-solving",

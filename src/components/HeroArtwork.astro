@@ -1,17 +1,17 @@
 ---
 const sheets = [
-  { name: 'thoughts-activity', className: 'sheet-thoughts-activity' },
-  { name: 'safety-alarm-cover', className: 'sheet-safety' },
-  { name: 'feelings-activity', className: 'sheet-feelings-activity' },
-  { name: 'thoughts-cover', className: 'sheet-thoughts' },
-  { name: 'feelings-cover', className: 'sheet-feelings' },
+  { file: 'thoughts-activity-v2.webp', className: 'sheet-thoughts-activity' },
+  { file: 'safety-alarm-cover.webp', className: 'sheet-safety', height: 289 },
+  { file: 'feelings-activity-v2.webp', className: 'sheet-feelings-activity' },
+  { file: 'thoughts-cover-v2.webp', className: 'sheet-thoughts' },
+  { file: 'feelings-cover-v2.webp', className: 'sheet-feelings' },
 ];
 ---
 <div class="hero-product hero-deck" role="img" aria-label="Understanding Thoughts, Understanding Feelings and My Safety Alarm toolkit covers, with sample activity pages">
-  {sheets.map(({ name, className }) => (
+  {sheets.map(({ file, className, height = 285 }) => (
     <div class={`hero-sheet ${className}`}>
       <div class="hero-sheet-scroll"><div class="hero-sheet-enter">
-        <img src={`/images/hero/${name}-v2.webp`} alt="" width="200" height="285" fetchpriority="high" />
+        <img src={`/images/hero/${file}`} alt="" width="200" height={height} fetchpriority="high" />
       </div></div>
     </div>
   ))}

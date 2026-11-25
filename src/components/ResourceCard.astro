@@ -6,7 +6,7 @@ interface Props { resource: Resource; }
 const { resource } = Astro.props;
 ---
 <article class="resource-card">
-  {resource.image && <a href={resource.etsyUrl ?? '/resources/'} class="resource-image-link" aria-label={`Explore ${resource.title}`}>{['thoughts-feelings-bundle', 'thoughts', 'feelings', 'safety-alarm'].includes(resource.id) ? <ProductArtwork id={resource.id} title={resource.title} bundle={resource.id === 'thoughts-feelings-bundle'} /> : <img src={resource.image} alt={resource.imageAlt ?? resource.title} width="600" height="600" loading="lazy" />}</a>}
+  {resource.image && <a href={resource.etsyUrl ?? '/resources/'} class="resource-image-link" aria-label={`Explore ${resource.title}`}>{['thoughts-feelings-bundle', 'thoughts', 'feelings'].includes(resource.id) ? <ProductArtwork id={resource.id} title={resource.title} bundle={resource.id === 'thoughts-feelings-bundle'} /> : <img src={resource.image} alt={resource.imageAlt ?? resource.title} width="600" height="600" loading="lazy" />}</a>}
   <div class="resource-card-body">
     <p class="resource-meta">Ages 8–11 <span aria-hidden="true">·</span> Printable PDF</p>
     <h3>{resource.title}</h3><p>{resource.description}</p>
