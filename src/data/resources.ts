@@ -88,7 +88,11 @@ export const resources: Resource[] = [
     "free": false,
     "etsyUrl": "https://curiousbraintoolkit.etsy.com/listing/4551573721",
     "tesUrl": null,
-    "downloadUrl": null
+    "downloadUrl": null,
+    "image": "/images/products/body-clues-pages.webp",
+    "imageWidth": 1000,
+    "imageHeight": 710,
+    "imageAlt": "Understanding Body Clues toolkit cover, adult guide and sample worksheets."
   },
   {
     "id": "safety-alarm",
