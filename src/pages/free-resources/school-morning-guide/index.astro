@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+<BaseLayout title="I don’t want to go to school" description="A free guide from Dr Sarah Cook on what to say when your child says they don’t want to go to school." wide>
+  <PageIntro
+    eyebrow="Free guide"
+    title="“I don’t want to go to school.”"
+    lead="A free script for the morning this happens, with ideas for what to say and what to try next. Written by Dr Sarah Cook, Clinical Psychologist."
+    backHref="/free-resources/"
+    backLabel="Free Resources"
+  />
+  <section class="section">
+    <div class="container">
+      <form class="contact-channel guide-form" aria-labelledby="guide-form-heading" aria-describedby="guide-preview-note">
+        <h2 id="guide-form-heading">Get the free guide</h2>
+        <p id="guide-preview-note">This is a preview. Use a sample email address to try the form.</p>
+        <fieldset disabled>
+          <div>
+            <label for="guide-name">First name (optional)</label>
+            <input id="guide-name" type="text" autocomplete="off" />
+          </div>
+          <div>
+            <label for="guide-email">Email address</label>
+            <input id="guide-email" type="email" autocomplete="off" required />
+          </div>
+          <button class="button button-primary" type="submit">Send me the free guide</button>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.guide-form');
+  const fieldset = form?.querySelector('fieldset');
+  if (form && fieldset) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('testing');
+    });
+    fieldset.disabled = false;
+  }
+</script>
+
+<style>
+  .guide-form { max-width: 540px; }
+  fieldset { display: grid; gap: 18px; margin: 0; padding: 0; border: 0; min-width: 0; }
+  label { display: block; margin-bottom: 4px; font-weight: 650; }
+  input { width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid #9cacb5; border-radius: 7px; font: inherit; color: var(--navy); background: var(--white); }
+  button { justify-self: start; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: default; }
+</style>
