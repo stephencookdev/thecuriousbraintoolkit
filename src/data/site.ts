@@ -1,10 +1,12 @@
 // Add only confirmed contact and social destinations.
 export const site = {
-  name: 'The Curious Brain Toolkit™',
+  name: 'The Curious Brain Toolkit®',
+  creator: { name: 'Dr Sarah Cook', role: 'Clinical Psychologist' },
   tagline: 'Psychology-informed tools, made curious and accessible.',
   etsyUrl: 'https://www.etsy.com/uk/shop/CuriousBrainToolkit' as string | null,
   instagramUrl: 'https://www.instagram.com/thecuriousbraintoolkit/' as string | null,
-  contactEmail: null as string | null,
+  tiktokUrl: 'https://www.tiktok.com/@curiousbraintoolkit',
+  contactEmail: 'hello@thecuriousbraintoolkit.co.uk',
 };
 
 export const navigation = [

@@ -3,12 +3,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import PageCTA from '../../components/PageCTA.astro';
 import Icon from '../../components/Icon.astro';
+import { site } from '../../data/site';
 ---
-<BaseLayout title="About Dr Sarah Cook and the Curious Brain Toolkit" description="Meet the Clinical Psychologist behind Curious Brain and discover the thinking behind the printable resources." wide>
-  <PageIntro eyebrow="About Sarah & Curious Brain" title="Understanding comes first." lead="Created by Dr Sarah Cook, Clinical Psychologist, for children and the parents and professionals who support them." />
+<BaseLayout title="About Dr Sarah Cook" description="Meet the Clinical Psychologist behind Curious Brain and discover the thinking behind the printable resources." wide>
+  <PageIntro eyebrow="About Sarah & Curious Brain" title="The psychologist behind The Curious Brain Toolkit" />
   <section class="section"><div class="container story-grid">
-    <div class="creator-profile"><img src="/images/curious-brain-mascot.webp" alt="The Curious Brain mascot, a friendly brain with a magnifying glass" width="280" height="272" /><p class="eyebrow">The mind behind the toolkit</p><h2>Dr Sarah Cook</h2><p>Clinical Psychologist<br />Creator of The Curious Brain Toolkit</p><span class="profile-rule" aria-hidden="true"></span><p class="profile-caption">Psychology-informed.<br />Curiosity-led.</p></div>
-    <div class="story-copy"><p class="eyebrow">Why Curious Brain?</p><h2>Making room for understanding.</h2><p>The Curious Brain Toolkit brings psychological ideas into practical conversations that children and the adults around them can explore together.</p><p>It starts with curiosity: making space to notice thoughts and feelings, understand a child’s experience and explore what might help. The child is not treated as the problem, and one strategy is not expected to work for everyone.</p><p>The printable resources offer a starting point for adults supporting children aged 8–11 at home, in school and in professional settings. They can help structure a conversation while leaving room for the child’s own words, interests and pace.</p><a class="text-link" href="/our-approach/">How the approach works <Icon name="arrow" /></a></div>
+    <div class="creator-profile"><img src="/images/curious-brain-mascot.webp" alt="The Curious Brain mascot, a friendly brain with a magnifying glass" width="280" height="272" /><p class="eyebrow">The mind behind the toolkit</p><h2>{site.creator.name}</h2><p>{site.creator.role}<br />Creator of The Curious Brain Toolkit</p><span class="profile-rule" aria-hidden="true"></span><p class="profile-caption">Psychology-informed.<br />Curiosity-led.</p></div>
+    <div class="story-copy">
+      <p>I’m Dr Sarah Cook, an HCPC-registered Clinical Psychologist with a Doctorate in Clinical Psychology and many years’ experience supporting children, young people, families and schools.</p>
+      <p>In my clinical work, I often noticed that children were offered coping strategies before they had been given enough help to understand what was happening for them. I created The Curious Brain Toolkit to offer a different starting point: slowing down, noticing what is happening, developing shared understanding and then exploring what might help.</p>
+      <p>The resources translate psychological ideas into clear, practical tools for shared conversations. They are psychology-informed and neurodiversity-affirming, while leaving room for each child’s own words, interests and pace.</p>
+      <a class="text-link" href="/our-approach/">How the approach works <Icon name="arrow" /></a>
+    </div>
   </div></section>
   <section class="values-section"><div class="container"><div class="section-heading"><p class="eyebrow">What guides the toolkit</p><h2>Small steps. Shared understanding.</h2></div><div class="info-grid">
     <article class="info-card"><Icon name="eye" /><h3>Notice before solving</h3><p>Start with what the child is experiencing. Understanding can come before deciding what to change.</p></article>

@@ -9,7 +9,10 @@ const isCurrentPage = (href: string) => currentPath === href || (
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label={`${site.name} — home`}><img src="/images/curious-brain-wordmark.webp" alt="The Curious Brain Toolkit" width="600" height="212" /></a>
+    <a class="brand brand-mark" href="/" aria-label={`${site.name} — home`}>
+      <img src="/images/curious-brain-wordmark.webp" alt="" width="600" height="212" />
+      <sup aria-hidden="true">®</sup>
+    </a>
     <nav class="desktop-nav" aria-label="Main navigation"><ul>
       {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={isCurrentPage(href) ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
     </ul></nav>
