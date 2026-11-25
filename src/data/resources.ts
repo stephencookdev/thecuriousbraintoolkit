@@ -32,6 +32,7 @@ export interface Resource {
   free: boolean;
   image?: string;
   imageAlt?: string;
+  previewStyle?: 'page-stack';
   etsyUrl: string | null;
   tesUrl: string | null;
   downloadUrl: string | null;
@@ -50,6 +51,7 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/thoughts-feelings-bundle-v2.webp",
+    "previewStyle": "page-stack",
     "imageAlt": "Understanding Thoughts & Feelings: reconstructed preview of toolkit pages and activities."
   },
   {
@@ -62,6 +64,7 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/thoughts-v2.webp",
+    "previewStyle": "page-stack",
     "imageAlt": "Understanding Thoughts: reconstructed preview of toolkit pages and activities."
   },
   {
@@ -74,6 +77,7 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/feelings-v2.webp",
+    "previewStyle": "page-stack",
     "imageAlt": "Understanding Feelings: reconstructed preview of toolkit pages and activities."
   },
   {
@@ -85,7 +89,8 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4563863872/child-anxiety-toolkit-o-understanding-my",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/products/safety-alarm.webp",
+    "image": "/images/products/safety-alarm-pages.webp",
+    "previewStyle": "page-stack",
     "imageAlt": "Understanding My Safety Alarm: preview of the cover and updated toolkit pages."
   },
   {
@@ -109,7 +114,8 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4596186205/worry-time-for-kids-ages-811-o-anxiety",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/products/worry-time.webp",
+    "image": "/images/products/worry-time-pages.webp",
+    "previewStyle": "page-stack",
     "imageAlt": "Worry Time: preview of the cover and printable worksheets."
   },
   {
@@ -121,7 +127,8 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4599583258/child-anxiety-worksheets-o-worry",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/products/worry-and-avoidance.webp",
+    "image": "/images/products/worry-and-avoidance-pages.webp",
+    "previewStyle": "page-stack",
     "imageAlt": "Worry and Avoidance – Have a Go: preview of the cover and printable worksheets."
   },
   {

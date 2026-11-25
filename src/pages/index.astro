@@ -48,7 +48,7 @@ const copingCards = resources.find((resource) => resource.id === 'safety-alarm-c
   <section class="section featured-section" aria-labelledby="featured-heading"><div class="container">
     <div class="section-heading section-heading-split"><div><p class="eyebrow">Tools for shared understanding</p><h2 id="featured-heading">Small steps. A place to begin.</h2></div><a class="text-link" href="/resources/">See all resources <Icon name="arrow" /></a></div>
     <article class="bundle-feature">
-      <a class="bundle-art" href={bundle.etsyUrl!} aria-label="View the Thoughts and Feelings bundle on Etsy"><ProductArtwork id={bundle.id} title={bundle.title} bundle /></a>
+      <a class="bundle-art" href={bundle.etsyUrl!} aria-label="View the Thoughts and Feelings bundle on Etsy"><ProductArtwork image={bundle.image!} imageAlt={bundle.imageAlt ?? bundle.title} bundle /></a>
       <div class="bundle-copy"><p class="eyebrow">Two connected toolkits</p><h3>{bundle.title}</h3><p>{bundle.description}</p><ul class="bundle-details"><li><Icon name="check" /> Learn pages & explore activities</li><li><Icon name="check" /> Guidance for the adults alongside them</li><li><Icon name="check" /> Ages 8–11 · Printable PDFs</li></ul><a class="button button-primary" href={bundle.etsyUrl!}>Individual use on Etsy <Icon name="external" /></a><a class="text-link school-enquiry" href="/contact/#school-enquiries">School licence enquiries <Icon name="arrow" /></a></div>
     </article>
     <div class="featured-grid">{featured.map((resource) => <ResourceCard resource={resource} />)}</div>

@@ -13,9 +13,9 @@ These are shop previews, not downloadable product PDFs.
 | `products/thoughts-v2.webp` | https://www.etsy.com/uk/listing/4551552256/understanding-thoughts-printable |
 | `products/feelings-v2.webp` | https://www.etsy.com/uk/listing/4551572243/understanding-feelings-printable |
 | `products/thoughts-feelings-bundle-v2.webp` | https://www.etsy.com/uk/listing/4551163236/printable-child-psychology-toolkit |
-| `products/safety-alarm.webp` | https://www.etsy.com/uk/listing/4563863872/child-anxiety-toolkit-o-understanding-my |
-| `products/worry-time.webp` | https://www.etsy.com/uk/listing/4596186205/worry-time-for-kids-ages-811-o-anxiety |
-| `products/worry-and-avoidance.webp` | https://www.etsy.com/uk/listing/4599583258/child-anxiety-worksheets-o-worry |
+| `products/safety-alarm-pages.webp` | https://www.etsy.com/uk/listing/4563863872/child-anxiety-toolkit-o-understanding-my |
+| `products/worry-time-pages.webp` | https://www.etsy.com/uk/listing/4596186205/worry-time-for-kids-ages-811-o-anxiety |
+| `products/worry-and-avoidance-pages.webp` | https://www.etsy.com/uk/listing/4599583258/child-anxiety-worksheets-o-worry |
 | `safety-alarm-cards.webp` | https://www.etsy.com/uk/listing/4557576323/anxiety-coping-cards-for-kids-safety |
 | `problem-solving.webp` | https://www.etsy.com/uk/listing/4583081926/problem-solving-toolkit-for-kids-o |
 
@@ -28,9 +28,9 @@ The `public/images/hero/*-v2.webp` pages and `public/images/products/*-v2.webp` 
 
 Product age, format and contents pills now use accessible HTML/CSS in `ProductArtwork.astro`. Downloads and purchase links still route to the original Etsy listings.
 
-The homepage Safety Alarm cover (`hero/safety-alarm-cover.webp`) uses Sarah’s updated `Slide1.PNG` from her 16 November 2026 email, “Safety Alarm Etsy image and PNGs”. The Safety Alarm product preview and both new worry previews use Sarah’s Etsy artwork from the same batch of emails.
+The homepage Safety Alarm cover (`hero/safety-alarm-cover.webp`) uses Sarah’s updated `Slide1.PNG` from her 16 November 2026 email, “Safety Alarm Etsy image and PNGs”. The Safety Alarm, Worry Time and Have a Go product previews use the original worksheet PNGs from the same batch of emails. Each transparent composition combines the cover, a learn page and an activity (Safety Alarm slides 1, 3 and 6, Worry Time slides 1, 4 and 5, and Have a Go slides 1, 4 and 7). No worksheet content was regenerated.
 
-The November archive also includes individual worksheet PNGs for Safety Alarm, Worry Time and Have a Go, as well as the free-resource PDFs and their previews. The square listing artwork is flattened onto a pale background. The Problem Solving preview comes from Etsy, and the November archive does not include its original artwork or worksheet exports. The Thoughts and Feelings toolkits still use the October reconstructions.
+The free-resource thumbnails in `public/images/free-resources/` are rendered from the PDFs in `assets/free-resources/`. The square listing previews for Problem Solving and the paid Safety Alarm Cards are flattened onto a pale background. The November archive does not include original Problem Solving pages. Two built-in ImageGen cutout attempts altered printed text, so the original Etsy preview remains in use. The Thoughts and Feelings toolkits still use the October reconstructions.
 
 ## Source control asset budget
 

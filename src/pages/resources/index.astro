@@ -35,9 +35,9 @@ const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem 
         <div><h2 id="free-resources-heading">Free resources</h2><p>Try a free printable to start a conversation with your child or class.</p></div>
       </div>
       <div class="info-grid">
-        {freeResources.map(({ slug, title, description, height }) => (
+        {freeResources.map(({ slug, title, description }) => (
           <article class="info-card free-resource-card">
-            <img src={`/images/free-resources/${slug}.webp`} alt="" width="800" height={height} loading="lazy" />
+            <img src={`/images/free-resources/${slug}-page.webp`} alt="" width="800" height="600" loading="lazy" />
             <h3>{title}</h3>
             <p>{description}</p>
             <a class="button button-primary" href={`/resources/request/?resource=${slug}`} aria-label={`Request ${title}`}>Get the free PDF</a>

@@ -4,13 +4,13 @@ import Icon from './Icon.astro';
 import ProductArtwork from './ProductArtwork.astro';
 interface Props { resource: Resource; }
 const { resource } = Astro.props;
-const usesProductArtwork = ['thoughts-feelings-bundle', 'thoughts', 'feelings'].includes(resource.id);
+const usesProductArtwork = resource.previewStyle === 'page-stack';
 ---
 <article class="resource-card">
   {resource.image && (
     <a href={resource.etsyUrl ?? '/resources/'} class:list={['resource-image-link', { 'resource-image-listing': !usesProductArtwork }]} aria-label={`Explore ${resource.title}`}>
       {usesProductArtwork
-        ? <ProductArtwork id={resource.id} title={resource.title} bundle={resource.id === 'thoughts-feelings-bundle'} />
+        ? <ProductArtwork image={resource.image} imageAlt={resource.imageAlt ?? resource.title} bundle={resource.id === 'thoughts-feelings-bundle'} />
         : <img src={resource.image} alt={resource.imageAlt ?? resource.title} width="600" height="600" loading="lazy" />}
     </a>
   )}
