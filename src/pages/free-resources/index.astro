@@ -1,17 +1,39 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageIntro from '../../components/PageIntro.astro';
-import PageCTA from '../../components/PageCTA.astro';
 import Icon from '../../components/Icon.astro';
 import { site } from '../../data/site';
+
+const downloads = [
+  { slug: 'safety-alarm-support-cards', title: 'Safety Alarm Support Cards', description: 'Four printable cards with prompts to help children explore what support might help.', height: 450 },
+  { slug: 'after-a-child-has-felt-overwhelmed', title: 'After a Child Has Felt Overwhelmed', description: 'Five curious questions to help you talk together after an overwhelming moment.', height: 600 },
+  { slug: 'when-a-child-says-i-cant', title: 'When a Child Says “I Can’t”', description: 'Prompts to explore what feels difficult and what might make a next step possible.', height: 600 },
+];
 ---
-<BaseLayout title="Free resources" description="Free Curious Brain printable resources for conversations with children aged 8–11 are coming soon." wide>
-  <PageIntro eyebrow="Free printables" title="Free resources are coming soon" lead="We’re preparing a small collection of free printable resources to support curious conversations with children aged 8–11. Please check back soon, or follow The Curious Brain Toolkit on Instagram or TikTok for updates.">
+<BaseLayout title="Free resources" description="Download free Curious Brain printable resources for curious conversations with children aged 8–11." wide>
+  <PageIntro eyebrow="Free printables" title="Free resources" lead="Download printable resources for curious conversations with children aged 8–11.">
     <div class="intro-facts">
       {site.instagramUrl && <a class="text-link" href={site.instagramUrl}>Follow on Instagram <Icon name="external" /></a>}
       <a class="text-link" href={site.tiktokUrl}>Follow on TikTok <Icon name="external" /></a>
     </div>
   </PageIntro>
-  <section class="section"><div class="container availability-grid"><article class="info-card"><Icon name="book" /><h2>Get to know the approach.</h2><p>Read about Notice, Understand, Explore and Practise, with an example of how a curious conversation might begin.</p><a class="text-link" href="/our-approach/">Read our approach <Icon name="arrow" /></a></article><article class="info-card"><Icon name="search" /><h2>Explore the collection.</h2><p>Browse the resources by topic, then check the individual Etsy listing for contents, pricing and use permissions.</p><a class="text-link" href="/resources/">Browse all resources <Icon name="arrow" /></a></article></div></section>
-  <PageCTA title="Choosing for a school or professional setting?" text="Ask about the permissions for your setting before you purchase." href="/contact/#school-enquiries" label="School enquiries" />
+  <section class="section" aria-label="Free printable downloads">
+    <div class="container info-grid">
+      {downloads.map(({ slug, title, description, height }) => (
+        <article class="info-card download-card">
+          <img src={`/images/free-resources/${slug}.webp`} alt="" width="800" height={height} loading="lazy" />
+          <h2>{title}</h2>
+          <p>{description}</p>
+          <a class="button button-primary" href={`/downloads/${slug}.pdf`} download aria-label={`Download ${title} as a free PDF`}>Download free PDF</a>
+        </article>
+      ))}
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .download-card { display: flex; flex-direction: column; align-items: flex-start; }
+  .download-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; margin-bottom: 20px; }
+  .download-card h2 { font-size: 1.5rem; }
+  .download-card .button { margin-top: auto; }
+</style>

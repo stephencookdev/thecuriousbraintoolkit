@@ -13,7 +13,7 @@ The Astro source currently generates these routes:
 | `/about/` | `src/pages/about/index.astro` | About Sarah |
 | `/our-approach/` | `src/pages/our-approach/index.astro` | Approach |
 | `/contact/` | `src/pages/contact/index.astro` | Etsy contact route |
-| `/free-resources/` | `src/pages/free-resources/index.astro` | States no free downloads are available |
+| `/free-resources/` | `src/pages/free-resources/index.astro` | Free printable PDF downloads |
 | `/privacy-policy/` | `src/pages/privacy-policy/index.astro` | Privacy information |
 | `/cookie-policy/` | `src/pages/cookie-policy/index.astro` | Cookie information |
 | `/terms-of-use/` | `src/pages/terms-of-use/index.astro` | Website and resource use |

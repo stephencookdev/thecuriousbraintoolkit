@@ -43,9 +43,8 @@ The hero has five separate paper assets, a staggered
 CSS entrance and a small scroll-driven fan effect. Scroll animation progressively
 enhances browsers supporting CSS view timelines; other browsers keep the static
 composition and entrance. Reduced-motion preferences disable the paper animations. Product purchase links go to their actual Etsy listings.
-There are no free downloads supplied, so the free-resources route is retained but hidden
-from primary navigation. Instagram is linked. TES links and a direct contact email remain to be supplied.
-School enquiries currently lead to a contact page with the Etsy seller contact route.
+Free Resources offers three direct PDF downloads. Instagram and TikTok are linked.
+The Contact page shows the planned school enquiries address as text. Order support is on Etsy.
 
 `assets/brand/` and `output/website-mockups/` are ignored local references. Production
 artwork lives in `public/images/` and is included in deployments. See
