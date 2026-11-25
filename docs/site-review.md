@@ -13,7 +13,7 @@ The Astro source currently generates these routes:
 | `/about/` | `src/pages/about/index.astro` | About Sarah |
 | `/our-approach/` | `src/pages/our-approach/index.astro` | Approach |
 | `/contact/` | `src/pages/contact/index.astro` | Etsy contact route |
-| `/free-resources/` | `src/pages/free-resources/index.astro` | Free printable PDF downloads |
+| `/resources/request/` | `src/pages/resources/request/index.astro` | Prototype request form for free printables |
 | `/privacy-policy/` | `src/pages/privacy-policy/index.astro` | Privacy information |
 | `/cookie-policy/` | `src/pages/cookie-policy/index.astro` | Cookie information |
 | `/terms-of-use/` | `src/pages/terms-of-use/index.astro` | Website and resource use |
@@ -36,6 +36,6 @@ There is no sitemap generator or sitemap route in the current source.
 
 ## Catalogue and inner-page design completion
 
-The catalogue now uses topic navigation, responsive product grids, practical purchase/use FAQs and a school enquiry call to action. Category pages reuse that layout with conversation guidance and a horizontal treatment for a single product. About, Our Approach and Contact have designed sections and clear next steps; policy pages use a consistent reading layout with information navigation. Free Resources and the 404 also use the shared inner-page system.
+The catalogue now uses topic navigation, responsive product grids, practical purchase/use FAQs and a school enquiry call to action. Category pages reuse that layout with conversation guidance and a horizontal treatment for a single product. About, Our Approach and Contact have designed sections and clear next steps; policy pages use a consistent reading layout with information navigation. The request form and the 404 also use the shared inner-page system.
 
 School links point to `/contact/#school-enquiries`, which includes an enquiry checklist and a direct Etsy shop action. No new contact channel, licence or biography details have been invented. The factual owner/deployment decisions listed above remain outstanding.

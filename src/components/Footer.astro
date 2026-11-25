@@ -12,7 +12,7 @@ import { navigation, policyPages, site } from '../data/site';
       <p class="small">For children aged 8–11.<br />And the adults alongside them.</p>
     </div>
     <nav aria-label="Footer navigation"><p class="footer-label">Explore</p><ul>{navigation.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}</ul></nav>
-    <nav aria-label="Information"><p class="footer-label">Useful information</p><ul><li><a href="/contact/">Contact</a></li><li><a href="/free-resources/">Free Resources</a></li>{policyPages.map(({ slug, title }) => <li><a href={`/${slug}/`}>{title}</a></li>)}</ul></nav>
+    <nav aria-label="Information"><p class="footer-label">Useful information</p><ul><li><a href="/contact/">Contact</a></li>{policyPages.map(({ slug, title }) => <li><a href={`/${slug}/`}>{title}</a></li>)}</ul></nav>
     <div>
       <p class="footer-label">Find the resources</p>
       <p>Printable tools to explore together, at home or in your work.</p>

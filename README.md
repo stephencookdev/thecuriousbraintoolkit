@@ -19,7 +19,7 @@ npm run preview
 
 ## Structure
 
-- `src/pages/`: Home, Resources, three resource categories, Free Resources,
+- `src/pages/`: Home, Resources, three resource categories, a prototype free resource form,
   Our Approach, About, Contact, policy drafts and 404.
 - `src/layouts/BaseLayout.astro`: shared document metadata, header and footer.
 - `src/components/`: reusable navigation, framework and resource cards.
@@ -43,7 +43,7 @@ The hero has five separate paper assets, a staggered
 CSS entrance and a small scroll-driven fan effect. Scroll animation progressively
 enhances browsers supporting CSS view timelines; other browsers keep the static
 composition and entrance. Reduced-motion preferences disable the paper animations. Product purchase links go to their actual Etsy listings.
-Free Resources offers three direct PDF downloads. Instagram and TikTok are linked.
+Resources includes a free printables section linked to a prototype form. Instagram and TikTok are linked.
 The Contact page shows the planned school enquiries address as text. Order support is on Etsy.
 
 `assets/brand/` and `output/website-mockups/` are ignored local references. Production

@@ -5,12 +5,13 @@ import TopicNav from '../../components/TopicNav.astro';
 import ResourceCard from '../../components/ResourceCard.astro';
 import Icon from '../../components/Icon.astro';
 import { categories, resources } from '../../data/resources';
+import { freeResources } from '../../data/free-resources';
 const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem solving'];
 ---
 <BaseLayout title="Psychology-informed resources for children" description="Explore printable toolkits for emotional understanding, worry, anxiety and everyday problem solving." wide>
   <PageIntro eyebrow="The resource collection" title="Find the right place to begin." lead="Practical, printable psychology tools for children aged 8–11 and the adults alongside them.">
     <div class="intro-facts"><span><Icon name="people" /> For home, school and professional settings</span><span><Icon name="document" /> Printable PDFs</span></div>
-    <p class="intro-support"><a class="text-link" href="/free-resources/">Browse free downloads <Icon name="arrow" /></a></p>
+    <p class="intro-support"><a class="text-link" href="#free-resources">Explore free resources <Icon name="arrow" /></a></p>
   </PageIntro>
   <div class="container catalogue">
     <TopicNav anchors />
@@ -23,14 +24,35 @@ const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem 
         </div>
       </section>
     ))}
+    <section class="catalogue-section" id="free-resources" aria-labelledby="free-resources-heading">
+      <div class="catalogue-heading">
+        <div><h2 id="free-resources-heading">Free resources</h2><p>Try a free printable to start a conversation with your child or class.</p></div>
+      </div>
+      <div class="info-grid">
+        {freeResources.map(({ slug, title, description, height }) => (
+          <article class="info-card free-resource-card">
+            <img src={`/images/free-resources/${slug}.webp`} alt="" width="800" height={height} loading="lazy" />
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <a class="button button-primary" href={`/resources/request/?resource=${slug}`} aria-label={`Request ${title}`}>Get the free PDF</a>
+          </article>
+        ))}
+      </div>
+    </section>
     <section class="catalogue-help" aria-labelledby="catalogue-help-heading">
       <div><p class="eyebrow">A few practical details</p><h2 id="catalogue-help-heading">Before you choose</h2><p>Start with what feels relevant to the child, rather than working through everything at once.</p><a class="text-link" href="/our-approach/">Our approach <Icon name="arrow" /></a></div>
       <div class="faq-list">
         <details><summary>How do I purchase a resource?</summary><p>Choose a resource to open its Etsy listing. Check the contents, format and use permissions there before purchasing. Payments and downloads for paid resources are handled by Etsy.</p></details>
         <details><summary>Can I use the resources in a school or team?</summary><p>Ask the seller to confirm the permissions for your setting before buying. <a href="/contact/#school-enquiries">Find out what to include in a school enquiry.</a></p></details>
-        <details><summary>Are there free downloads?</summary><p>Yes. Visit the <a href="/free-resources/">Free Resources page</a> to download printable PDFs.</p></details>
+        <details><summary>Are there free downloads?</summary><p>See the <a href="#free-resources">free resources above</a> for printable PDFs.</p></details>
       </div>
     </section>
   </div>
   <section class="page-cta"><div class="container page-cta-inner"><div><p class="eyebrow">For schools and professionals</p><h2>Choosing resources for your setting?</h2><p>Ask about the resources and the use permissions you need.</p></div><a class="button button-primary" href="/contact/#school-enquiries">School enquiries <Icon name="arrow" /></a></div></section>
 </BaseLayout>
+
+<style>
+  .free-resource-card { display: flex; flex-direction: column; align-items: flex-start; }
+  .free-resource-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; margin-bottom: 20px; }
+  .free-resource-card .button { margin-top: auto; }
+</style>

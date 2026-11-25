@@ -3,9 +3,8 @@ import { navigation, site } from '../data/site';
 import { categories } from '../data/resources';
 import Icon from './Icon.astro';
 const currentPath = Astro.url.pathname;
-const freeResourcesPath = '/free-resources/';
 const isCurrentPage = (href: string) => currentPath === href || (
-  href === '/resources/' && categories.some((category) => category.path === currentPath)
+  href === '/resources/' && (currentPath.startsWith('/resources/') || categories.some((category) => category.path === currentPath))
 );
 ---
 <header class="site-header">
@@ -17,12 +16,10 @@ const isCurrentPage = (href: string) => currentPath === href || (
     <nav class="desktop-nav" aria-label="Main navigation"><ul>
       {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={isCurrentPage(href) ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
     </ul></nav>
-    <a class="button button-primary header-cta" href={freeResourcesPath} aria-current={isCurrentPage(freeResourcesPath) ? 'page' : undefined}>Free Resources <Icon name="arrow" /></a>
     <details class="mobile-menu">
       <summary aria-label="Open navigation"><Icon name="menu" /><span>Menu</span></summary>
       <nav aria-label="Mobile navigation"><ul>
         {navigation.map(({ label, href }) => <li><a class="nav-link" href={href} aria-current={isCurrentPage(href) ? 'page' : undefined}><span class="nav-label">{label}</span></a></li>)}
-        <li><a class="nav-link" href={freeResourcesPath} aria-current={isCurrentPage(freeResourcesPath) ? 'page' : undefined}>Free Resources</a></li>
       </ul></nav>
     </details>
   </div>
