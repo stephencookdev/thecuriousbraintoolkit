@@ -5,7 +5,7 @@ import ResourceMeta from './ResourceMeta.astro';
 interface Props { resource: Resource; }
 const { resource } = Astro.props;
 ---
-<article class="resource-card">
+<article class="resource-card" id={`resource-${resource.id}`}>
   {resource.image && (
     <a href={resource.etsyUrl ?? '/resources/'} class="resource-image-link" aria-label={`Explore ${resource.title}`}>
       <img src={resource.image} alt={resource.imageAlt ?? resource.title} width={resource.imageWidth ?? 1000} height={resource.imageHeight ?? 667} loading="lazy" />

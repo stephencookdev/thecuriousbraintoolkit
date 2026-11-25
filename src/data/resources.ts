@@ -4,7 +4,7 @@ export const categories = [
     path: '/emotional-literacy-resources-ks2/',
     title: 'Thoughts and feelings resources for children',
     label: 'Build emotional understanding',
-    description: 'Explore the Curious Brain Thoughts and Feelings toolkits, with activities and guidance for the adults alongside children.',
+    description: 'Explore thoughts, feelings and body clues, with activities and guidance for the adults alongside children.',
   },
   {
     id: 'worry-anxiety',
@@ -81,6 +81,16 @@ export const resources: Resource[] = [
     "imageAlt": "Understanding Feelings: reconstructed preview of toolkit pages and activities."
   },
   {
+    "id": "body-clues",
+    "title": "Understanding Body Clues",
+    "category": "emotional-literacy",
+    "description": "Help children notice body sensations and explore how those clues can change across feelings and situations.",
+    "free": false,
+    "etsyUrl": "https://curiousbraintoolkit.etsy.com/listing/4551573721",
+    "tesUrl": null,
+    "downloadUrl": null
+  },
+  {
     "id": "safety-alarm",
     "title": "Understanding My Safety Alarm",
     "category": "worry-anxiety",
@@ -91,20 +101,6 @@ export const resources: Resource[] = [
     "downloadUrl": null,
     "image": "/images/products/safety-alarm-pages.webp",
     "imageAlt": "Understanding My Safety Alarm: preview of the cover and updated toolkit pages."
-  },
-  {
-    "id": "safety-alarm-cards",
-    "title": "My Safety Alarm Coping Cards",
-    "category": "worry-anxiety",
-    "description": "Printable cards to support conversations about a child’s Safety Alarm and possible next steps.",
-    "free": false,
-    "etsyUrl": "https://www.etsy.com/uk/listing/4557576323/anxiety-coping-cards-for-kids-safety",
-    "tesUrl": null,
-    "downloadUrl": null,
-    "image": "/images/products/safety-alarm-coping-cards-hires.webp",
-    "imageWidth": 1588,
-    "imageHeight": 780,
-    "imageAlt": "Four printable Safety Alarm Coping Cards from the Etsy listing."
   },
   {
     "id": "worry-time",
