@@ -101,9 +101,9 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4557576323/anxiety-coping-cards-for-kids-safety",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/products/safety-alarm-coping-cards.webp",
-    "imageWidth": 600,
-    "imageHeight": 305,
+    "image": "/images/products/safety-alarm-coping-cards-hires.webp",
+    "imageWidth": 1588,
+    "imageHeight": 780,
     "imageAlt": "Four printable Safety Alarm Coping Cards from the Etsy listing."
   },
   {

@@ -16,7 +16,7 @@ These are shop previews, not downloadable product PDFs.
 | `products/safety-alarm-pages.webp` | https://www.etsy.com/uk/listing/4563863872/child-anxiety-toolkit-o-understanding-my |
 | `products/worry-time-pages.webp` | https://www.etsy.com/uk/listing/4596186205/worry-time-for-kids-ages-811-o-anxiety |
 | `products/worry-and-avoidance-pages.webp` | https://www.etsy.com/uk/listing/4599583258/child-anxiety-worksheets-o-worry |
-| `products/safety-alarm-coping-cards.webp` | https://www.etsy.com/uk/listing/4557576323/anxiety-coping-cards-for-kids-safety |
+| `products/safety-alarm-coping-cards-hires.webp` | https://www.etsy.com/uk/listing/4557576323/anxiety-coping-cards-for-kids-safety |
 | `products/problem-solving-pages.webp` | https://www.etsy.com/uk/listing/4583081926/problem-solving-toolkit-for-kids-o |
 
 Headings use Nunito, self-hosted through `@fontsource/nunito` (SIL Open Font
@@ -30,7 +30,7 @@ The catalogue shows age and format once per paid card and puts the Thoughts and 
 
 The homepage Safety Alarm cover (`hero/safety-alarm-cover.webp`) uses Sarah’s updated `Slide1.PNG` from her 16 November 2026 email, “Safety Alarm Etsy image and PNGs”. The Safety Alarm, Worry Time and Have a Go product previews use the original worksheet PNGs from the same batch of emails. Each transparent composition combines the cover, a learn page and an activity (Safety Alarm slides 1, 3 and 6, Worry Time slides 1, 4 and 5, and Have a Go slides 1, 4 and 7). No worksheet content was regenerated.
 
-The free-resource thumbnails in `public/images/free-resources/` are rendered from the PDFs in `assets/free-resources/` and trimmed around the page. The paid Safety Alarm Cards preview uses the four cards from its own Etsy listing. The Problem Solving preview masks the paper shapes in the original Etsy poster, preserving the worksheet pixels. The original listing previews are saved in `assets/listing-previews/`. The Thoughts and Feelings toolkits still use the October reconstructions.
+The free-resource thumbnails in `public/images/free-resources/` are rendered from the PDFs in `assets/free-resources/` and trimmed around the page. The paid Safety Alarm Cards preview crops the four cards from the 1588 × 1588 listing photo ([Etsy image](https://i.etsystatic.com/66971695/r/il/028508/8483412845/il_1588xN.8483412845_9h9o.jpg)). An ImageGen upscale redrew some of the artwork, so the site uses the original listing image as the source. The Problem Solving preview masks the paper shapes in the original Etsy poster, preserving the worksheet pixels. Earlier listing previews are saved in `assets/listing-previews/`. The Thoughts and Feelings toolkits still use the October reconstructions.
 
 ## Source control asset budget
 
