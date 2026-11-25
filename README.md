@@ -1,7 +1,7 @@
 # The Curious Brain Toolkit
 
 Astro website based on the approved calm design, with a responsive catalogue and supporting pages. Static HTML output, plain
-CSS and small browser scripts for the desktop navigation and prototype form. No React, Svelte, database or server adapter.
+CSS and a small browser script for the desktop navigation. No React, Svelte, database or server adapter.
 
 ## Development
 
@@ -19,7 +19,7 @@ npm run preview
 
 ## Structure
 
-- `src/pages/`: Home, Resources, three resource categories, a prototype free resource form,
+- `src/pages/`: Home, Resources, three resource categories, a downloadable school-morning guide,
   Our Approach, About, Contact, policy drafts and 404.
 - `src/layouts/BaseLayout.astro`: shared document metadata, header and footer.
 - `src/components/`: reusable navigation, framework and resource cards.
@@ -43,7 +43,7 @@ The hero has five separate paper assets, a staggered
 CSS entrance and a small scroll-driven fan effect. Scroll animation progressively
 enhances browsers supporting CSS view timelines; other browsers keep the static
 composition and entrance. Reduced-motion preferences disable the paper animations. Product purchase links go to their actual Etsy listings.
-Resources includes a free printables section linked to a prototype form. Instagram and TikTok are linked.
+Resources includes a free printables section with direct PDF downloads. Instagram and TikTok are linked.
 School enquiries use `hello@thecuriousbraintoolkit.co.uk`. Set up and test the mailbox before launch. Order support is on Etsy.
 
 `assets/brand/` and `output/website-mockups/` are ignored local references. Production

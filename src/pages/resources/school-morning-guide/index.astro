@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+import Icon from '../../../components/Icon.astro';
+
+const title = 'When Your Child Doesn’t Want to Go to School';
+const description = 'Not sure what’s making school feel hard for your child? This guide helps you spot early signs, talk with your child about what they’re finding difficult, and think together about what might help.';
+---
+<BaseLayout title={title} description={description} wide>
+  <PageIntro
+    eyebrow="A free guide for parents and carers"
+    title={title}
+    lead={description}
+    backHref="/resources/#free-resources"
+    backLabel="Free resources"
+  >
+    <div class="guide-actions">
+      <a class="button button-primary" href="/downloads/school-morning-guide.pdf" download>Download free PDF <Icon name="document" /></a>
+      <a class="text-link" href="/privacy-policy/">Privacy Policy</a>
+    </div>
+    <img slot="aside" class="guide-cover" src="/images/free-resources/school-morning-guide-cover.webp" alt="First page of the guide: ‘I don’t want to go to school.’ What to say and what to do next." width="800" height="600" />
+  </PageIntro>
+</BaseLayout>
+
+<style>
+  .guide-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 26px; }
+  .guide-cover { width: 100%; height: auto; }
+</style>

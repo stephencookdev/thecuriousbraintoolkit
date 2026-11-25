@@ -13,7 +13,7 @@ The Astro source currently generates these routes:
 | `/about/` | `src/pages/about/index.astro` | About Sarah |
 | `/our-approach/` | `src/pages/our-approach/index.astro` | Approach |
 | `/contact/` | `src/pages/contact/index.astro` | School enquiries by email and Etsy order support |
-| `/resources/request/` | `src/pages/resources/request/index.astro` | Prototype request form for free printables |
+| `/resources/school-morning-guide/` | `src/pages/resources/school-morning-guide/index.astro` | Downloadable school-morning guide |
 | `/privacy-policy/` | `src/pages/privacy-policy/index.astro` | Privacy information |
 | `/cookie-policy/` | `src/pages/cookie-policy/index.astro` | Cookie information |
 | `/terms-of-use/` | `src/pages/terms-of-use/index.astro` | Website and resource use |
@@ -36,6 +36,6 @@ There is no sitemap generator or sitemap route in the current source.
 
 ## Catalogue and inner-page design completion
 
-The catalogue now uses topic navigation, responsive product grids, practical purchase/use FAQs and a school enquiry call to action. Category pages reuse that layout with conversation guidance and a horizontal treatment for a single product. About, Our Approach and Contact have designed sections and clear next steps; policy pages use a consistent reading layout with information navigation. The request form and the 404 also use the shared inner-page system.
+The catalogue now uses topic navigation, responsive product grids, practical purchase/use FAQs and a school enquiry call to action. Category pages reuse that layout with conversation guidance and a horizontal treatment for a single product. About, Our Approach and Contact have designed sections and clear next steps; policy pages use a consistent reading layout with information navigation. The school-morning guide and the 404 also use the shared inner-page system.
 
 School links point to `/contact/#school-enquiries`, which includes an enquiry checklist and a link to email `hello@thecuriousbraintoolkit.co.uk`. Set up and test that mailbox before launch. The separate Etsy shop action is for individual purchases and order questions.
