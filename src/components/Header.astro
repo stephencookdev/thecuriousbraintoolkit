@@ -24,3 +24,36 @@ const isCurrentPage = (href: string) => currentPath === href || (
     </details>
   </div>
 </header>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('.desktop-nav');
+  if (nav) {
+    const links = [...nav.querySelectorAll<HTMLAnchorElement>('.nav-link')];
+    const active = links.find((link) => link.getAttribute('aria-current') === 'page');
+    const moveIndicator = (link: HTMLAnchorElement | undefined) => {
+      nav.classList.toggle('has-indicator-target', Boolean(link));
+      if (link) {
+        const offset = link.offsetLeft + link.offsetWidth / 2;
+        nav.style.setProperty('--indicator-center', `${offset}px`);
+      }
+    };
+    const restoreIndicator = () => {
+      moveIndicator(links.find((link) => link.matches(':focus-visible')) ?? active);
+    };
+
+    restoreIndicator();
+    nav.classList.add('has-sliding-indicator');
+
+    for (const link of links) {
+      link.addEventListener('pointerenter', () => moveIndicator(link));
+      link.addEventListener('focus', () => moveIndicator(link));
+    }
+    nav.addEventListener('pointerleave', restoreIndicator);
+    nav.addEventListener('focusout', () => queueMicrotask(() => {
+      moveIndicator(links.find((link) => link.matches(':hover, :focus-visible')) ?? active);
+    }));
+    new ResizeObserver(() => {
+      moveIndicator(links.find((link) => link.matches(':hover, :focus-visible')) ?? active);
+    }).observe(nav);
+  }
+</script>

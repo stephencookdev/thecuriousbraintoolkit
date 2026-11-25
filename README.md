@@ -1,7 +1,7 @@
 # The Curious Brain Toolkit
 
 Astro website based on the approved calm design, with a responsive catalogue and supporting pages. Static HTML output, plain
-CSS and no browser JavaScript. No React, Svelte, database or server adapter.
+CSS and small browser scripts for the desktop navigation and prototype form. No React, Svelte, database or server adapter.
 
 ## Development
 

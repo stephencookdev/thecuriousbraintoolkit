@@ -46,9 +46,9 @@ ul,ol { padding-left: 1.3rem; }
 .brand-mark { display: inline-flex; align-items: flex-start; gap: 3px; color: var(--navy); text-decoration: none; }
 .brand-mark sup { font: 800 .75rem/1 var(--heading); }
 .brand img { width: 182px; }
-.desktop-nav { margin-left: auto; }
+.desktop-nav { position: relative; margin-left: auto; }
 .desktop-nav ul { display: flex; list-style: none; margin: 0; padding: 0; gap: 24px; }
-.desktop-nav a { text-decoration: none; font: 700 .85rem/1.4 var(--heading); color: var(--navy); white-space: nowrap; padding-block: 12px; }
+.desktop-nav a { display: block; text-decoration: none; font: 700 .85rem/1.4 var(--heading); color: var(--navy); white-space: nowrap; padding-block: 12px; }
 .mobile-menu { display: none; }
 .hero { background: var(--cream); padding: 64px 0 68px; }
 .hero-grid { display: grid; grid-template-columns: 1.04fr 1fr; align-items: center; gap: 72px; }
@@ -397,12 +397,33 @@ ul,ol { padding-left: 1.3rem; }
   text-decoration-thickness: 2px;
   text-underline-offset: .32em;
 }
+.desktop-nav.has-sliding-indicator [aria-current='page'] .nav-label { text-decoration: none; }
+.desktop-nav.has-sliding-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: var(--indicator-center, 0px);
+  width: 26px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--teal);
+  opacity: 0;
+  pointer-events: none;
+  transition: left 300ms cubic-bezier(.22, 1, .36, 1), opacity 150ms ease;
+}
+.desktop-nav.has-indicator-target::after { opacity: 1; }
 @media (max-width: 680px) {
   .hero-deck { margin-top: 8px; }
   .hero-mascot { bottom: -8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-sheet-enter, .hero-sheet-scroll { animation: none; }
+  .desktop-nav.has-sliding-indicator::after { transition: none; }
+}
+
+@media (forced-colors: active) {
+  .desktop-nav.has-sliding-indicator::after { background: LinkText; }
 }
 
 /* Product metadata stays crisp, accessible and separate from the transparent artwork. */
