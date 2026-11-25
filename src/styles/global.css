@@ -117,8 +117,6 @@ ul,ol { padding-left: 1.3rem; }
 .resource-card h3 { font-size: 1.4rem; }
 .resource-card-body > p:not(.resource-meta) { color: var(--muted); font-size: 1rem; }
 .resource-card-body > p.resource-contents { font-size: .9rem; font-weight: 600; }
-.resource-meta { font-size: .8rem; font-weight: 600; color: var(--teal-ink); margin-bottom: 12px; }
-.resource-meta span { padding-inline: 6px; }
 .resource-actions { margin-top: auto; padding-top: 8px; }
 .resource-actions .button { width: 100%; }
 .marketplace-note { color: var(--muted); text-align: center; font-size: .85rem; margin: 26px 0 0; }
@@ -194,7 +192,6 @@ ul,ol { padding-left: 1.3rem; }
   .featured-grid { gap: 16px; }
   .resource-card h3 { font-size: 1.25rem; }
   .resource-card-body { padding: 18px; }
-  .resource-meta { font-size: .73rem; }
   .resource-actions .button { font-size: .8rem; }
   .resource-actions .button svg { display: none; }
   .creator-grid { gap: 40px; }
@@ -241,7 +238,6 @@ ul,ol { padding-left: 1.3rem; }
   .featured-grid { grid-template-columns: 1fr; gap: 25px; }
   .resource-card h3 { font-size: 1.6rem; }
   .resource-card-body { padding: 25px; }
-  .resource-meta { font-size: .85rem; }
   .resource-actions .button { font-size: .95rem; }
   .resource-actions .button svg { display: block; }
   .marketplace-note { font-size: .85rem; text-align: left; }

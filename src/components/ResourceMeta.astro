@@ -1,0 +1,34 @@
+---
+import Icon from './Icon.astro';
+
+interface Props { free?: boolean; }
+const { free = false } = Astro.props;
+---
+<p class="resource-meta">
+  {free
+    ? <span class="resource-tag resource-tag-free">Free</span>
+    : <span class="resource-tag resource-tag-age">Ages 8–11</span>}
+  <span class="resource-tag resource-tag-pdf"><Icon name="document" /> Printable PDF</span>
+</p>
+
+<style>
+  .resource-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    margin-bottom: 12px;
+    font: 800 .8rem/1.35 var(--heading);
+  }
+  .resource-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+  }
+  .resource-tag-age { background: #f2eaf8; color: #624483; border-color: #e5d6ef; }
+  .resource-tag-free { background: #edf5e9; color: #365c32; border-color: #d6e6ce; }
+  .resource-tag-pdf { background: #e9f5f3; color: var(--teal-ink); border-color: #d0e7e3; }
+  .resource-tag-pdf :global(svg) { width: 15px; height: 15px; }
+</style>

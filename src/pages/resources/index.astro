@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import TopicNav from '../../components/TopicNav.astro';
 import ResourceCard from '../../components/ResourceCard.astro';
+import ResourceMeta from '../../components/ResourceMeta.astro';
 import Icon from '../../components/Icon.astro';
 import { categories, resources } from '../../data/resources';
 import { freeResources } from '../../data/free-resources';
@@ -41,7 +42,7 @@ const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem 
               <img src={`/images/free-resources/${slug}-preview.webp`} alt="" width={width} height={height} loading="lazy" />
             </div>
             <div class="resource-card-body">
-              <p class="resource-meta">Free <span aria-hidden="true">·</span> Printable PDF</p>
+              <ResourceMeta free />
               <h3>{title}</h3>
               <p>{description}</p>
               <div class="resource-actions">

@@ -40,7 +40,6 @@
 .resource-grid-paired { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .resource-grid .resource-card-body { padding: 26px; }
 .resource-grid .resource-card h3 { font-size: 1.55rem; }
-.resource-grid .resource-meta { font-size: .85rem; }
 .resource-grid .resource-actions .button { font-size: .95rem; padding-inline: 12px; }
 .resource-grid .resource-actions .button svg { display: block; }
 .resource-grid .school-enquiry { font-size: .95rem; }

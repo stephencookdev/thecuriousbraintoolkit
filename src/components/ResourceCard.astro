@@ -1,6 +1,7 @@
 ---
 import type { Resource } from '../data/resources';
 import Icon from './Icon.astro';
+import ResourceMeta from './ResourceMeta.astro';
 interface Props { resource: Resource; }
 const { resource } = Astro.props;
 ---
@@ -11,7 +12,7 @@ const { resource } = Astro.props;
     </a>
   )}
   <div class="resource-card-body">
-    <p class="resource-meta">Ages 8–11 <span aria-hidden="true">·</span> Printable PDF</p>
+    <ResourceMeta />
     <h3>{resource.title}</h3>
     {resource.contents && <p class="resource-contents">{resource.contents}</p>}
     <p>{resource.description}</p>
