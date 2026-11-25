@@ -25,7 +25,7 @@ import { site } from '../../data/site';
       <section id="school-enquiries" aria-labelledby="school-heading">
         <p class="eyebrow">Schools & professionals</p>
         <h2 id="school-heading">Tell us about your setting.</h2>
-        <p>School and licensing email: {site.contactEmail}. Email enquiries are coming soon. A helpful enquiry includes:</p>
+        <p>For school and licensing enquiries, email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>. A helpful enquiry includes:</p>
         <ul class="check-list">
           <li><Icon name="check" /> The resource or topic you’re interested in</li>
           <li><Icon name="check" /> Your setting and who will use it</li>

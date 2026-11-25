@@ -23,7 +23,7 @@ npm run preview
   Our Approach, About, Contact, policy drafts and 404.
 - `src/layouts/BaseLayout.astro`: shared document metadata, header and footer.
 - `src/components/`: reusable navigation, framework and resource cards.
-- `src/data/resources.ts`: six verified Etsy listings and category definitions.
+- `src/data/resources.ts`: Etsy listings and category definitions.
 - `src/data/site.ts`: navigation, branding text and external destinations.
 - `src/styles/global.css`: responsive plain CSS with self-hosted Nunito headings.
 - `src/styles/inner-pages.css`: catalogue grids and shared inner-page layouts.
@@ -38,13 +38,13 @@ require a production server.
 The catalogue groups resources by topic, using responsive product grids and a wider
 layout for the single problem-solving toolkit. Category pages include conversation
 guidance; About, Our Approach, Contact, policy pages and the 404 share the same calm
-visual system. School enquiry links lead directly to guidance and an Etsy contact action.
+visual system. School enquiry links lead to a checklist and an email link on Contact.
 The hero has five separate paper assets, a staggered
 CSS entrance and a small scroll-driven fan effect. Scroll animation progressively
 enhances browsers supporting CSS view timelines; other browsers keep the static
 composition and entrance. Reduced-motion preferences disable the paper animations. Product purchase links go to their actual Etsy listings.
 Resources includes a free printables section linked to a prototype form. Instagram and TikTok are linked.
-The Contact page shows the planned school enquiries address as text. Order support is on Etsy.
+School enquiries use `hello@thecuriousbraintoolkit.co.uk`. Set up and test the mailbox before launch. Order support is on Etsy.
 
 `assets/brand/` and `output/website-mockups/` are ignored local references. Production
 artwork lives in `public/images/` and is included in deployments. See
