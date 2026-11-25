@@ -25,7 +25,7 @@ const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem 
     {categories.map((category, i) => (
       <section class="catalogue-section" id={category.id} aria-labelledby={`${category.id}-heading`}>
         <div class="catalogue-heading"><div><p class="eyebrow">{`0${i + 1}`} <span aria-hidden="true">/</span> Explore together</p><h2 id={`${category.id}-heading`}>{topicNames[i]}</h2><p>{category.description}</p></div><a class="text-link" href={category.path}>Explore this topic <Icon name="arrow" /></a></div>
-        <div class:list={['resource-grid', { 'resource-grid-single': resources.filter((resource) => resource.category === category.id).length === 1 }]}>
+        <div class:list={['resource-grid', { 'resource-grid-paired': category.id === 'worry-anxiety', 'resource-grid-single': resources.filter((resource) => resource.category === category.id).length === 1 }]}>
           {resources.filter((resource) => resource.category === category.id && !resource.free).map((resource) => <ResourceCard resource={resource} />)}
         </div>
       </section>
@@ -35,12 +35,19 @@ const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem 
         <div><h2 id="free-resources-heading">Free resources</h2><p>Try a free printable to start a conversation with your child or class.</p></div>
       </div>
       <div class="info-grid">
-        {freeResources.map(({ slug, title, description }) => (
-          <article class="info-card free-resource-card">
-            <img src={`/images/free-resources/${slug}-page.webp`} alt="" width="800" height="600" loading="lazy" />
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <a class="button button-primary" href={`/resources/request/?resource=${slug}`} aria-label={`Request ${title}`}>Get the free PDF</a>
+        {freeResources.map(({ slug, title, description, width, height }) => (
+          <article class="resource-card free-resource-card">
+            <div class="free-resource-preview">
+              <img src={`/images/free-resources/${slug}-preview.webp`} alt="" width={width} height={height} loading="lazy" />
+            </div>
+            <div class="resource-card-body">
+              <p class="resource-meta">Free <span aria-hidden="true">·</span> Printable PDF</p>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <div class="resource-actions">
+                <a class="button button-primary" href={`/resources/request/?resource=${slug}`} aria-label={`Request the free PDF: ${title}`}>Request the free PDF</a>
+              </div>
+            </div>
           </article>
         ))}
       </div>
@@ -74,7 +81,12 @@ const topicNames = ['Thoughts & feelings', 'Worry & anxiety', 'Everyday problem 
   .free-printables-callout h2 { font-size: clamp(1.42rem, 2.7vw, 1.85rem); margin-bottom: 6px; }
   .free-printables-callout p { margin: 0; color: var(--muted); }
   .free-printables-callout .button svg { transform: rotate(90deg); }
-  .free-resource-card { display: flex; flex-direction: column; align-items: flex-start; }
-  .free-resource-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; margin-bottom: 20px; }
-  .free-resource-card .button { margin-top: auto; }
+  .free-resource-preview {
+    display: grid;
+    place-items: center;
+    height: clamp(275px, 28vw, 345px);
+    padding: 18px;
+    background: var(--cream);
+  }
+  .free-resource-preview img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
 </style>

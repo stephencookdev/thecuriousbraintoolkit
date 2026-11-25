@@ -32,7 +32,9 @@ export interface Resource {
   free: boolean;
   image?: string;
   imageAlt?: string;
-  previewStyle?: 'page-stack';
+  imageWidth?: number;
+  imageHeight?: number;
+  contents?: string;
   etsyUrl: string | null;
   tesUrl: string | null;
   downloadUrl: string | null;
@@ -44,14 +46,14 @@ export const resources: Resource[] = [
   {
     "id": "thoughts-feelings-bundle",
     "title": "Understanding Thoughts & Feelings",
+    "contents": "2 learn pages · 6 explore activities · 2 adult guides",
     "category": "emotional-literacy",
-    "description": "Two connected psychology toolkits to help children explore their thoughts and feelings, with learn pages, activities and adult guidance.",
+    "description": "Two connected toolkits to help children explore how thoughts and feelings fit together.",
     "free": false,
     "etsyUrl": "https://www.etsy.com/uk/listing/4551163236/printable-child-psychology-toolkit",
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/thoughts-feelings-bundle-v2.webp",
-    "previewStyle": "page-stack",
     "imageAlt": "Understanding Thoughts & Feelings: reconstructed preview of toolkit pages and activities."
   },
   {
@@ -64,7 +66,6 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/thoughts-v2.webp",
-    "previewStyle": "page-stack",
     "imageAlt": "Understanding Thoughts: reconstructed preview of toolkit pages and activities."
   },
   {
@@ -77,7 +78,6 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/feelings-v2.webp",
-    "previewStyle": "page-stack",
     "imageAlt": "Understanding Feelings: reconstructed preview of toolkit pages and activities."
   },
   {
@@ -90,7 +90,6 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/safety-alarm-pages.webp",
-    "previewStyle": "page-stack",
     "imageAlt": "Understanding My Safety Alarm: preview of the cover and updated toolkit pages."
   },
   {
@@ -102,8 +101,10 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4557576323/anxiety-coping-cards-for-kids-safety",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/safety-alarm-cards.webp",
-    "imageAlt": "My Safety Alarm Coping Cards: genuine listing artwork with toolkit pages and activities."
+    "image": "/images/products/safety-alarm-coping-cards.webp",
+    "imageWidth": 600,
+    "imageHeight": 305,
+    "imageAlt": "Four printable Safety Alarm Coping Cards from the Etsy listing."
   },
   {
     "id": "worry-time",
@@ -115,7 +116,6 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/worry-time-pages.webp",
-    "previewStyle": "page-stack",
     "imageAlt": "Worry Time: preview of the cover and printable worksheets."
   },
   {
@@ -128,7 +128,6 @@ export const resources: Resource[] = [
     "tesUrl": null,
     "downloadUrl": null,
     "image": "/images/products/worry-and-avoidance-pages.webp",
-    "previewStyle": "page-stack",
     "imageAlt": "Worry and Avoidance – Have a Go: preview of the cover and printable worksheets."
   },
   {
@@ -140,7 +139,9 @@ export const resources: Resource[] = [
     "etsyUrl": "https://www.etsy.com/uk/listing/4583081926/problem-solving-toolkit-for-kids-o",
     "tesUrl": null,
     "downloadUrl": null,
-    "image": "/images/problem-solving.webp",
-    "imageAlt": "The Problem Solving Toolkit: genuine listing artwork with toolkit pages and activities."
+    "image": "/images/products/problem-solving-pages.webp",
+    "imageWidth": 1000,
+    "imageHeight": 550,
+    "imageAlt": "The Problem Solving Toolkit cover and sample activities from the Etsy listing."
   }
 ];

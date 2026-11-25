@@ -100,8 +100,8 @@ ul,ol { padding-left: 1.3rem; }
 .section-heading-split h2 { margin: 0; }
 .section-heading-split > a { flex-shrink: 0; margin-bottom: 5px; }
 .bundle-feature { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; background: var(--cream); border: 1px solid #e9e7db; border-radius: 12px; overflow: hidden; margin-bottom: 32px; }
-.bundle-art { display: block; padding: 28px; background: #eff5f1; }
-.bundle-art img { width: 100%; border-radius: 5px; }
+.bundle-art { display: grid; place-items: center; align-self: stretch; padding: 24px; background: #edf4f1; }
+.bundle-art img { width: 100%; }
 .bundle-copy { padding: 40px 52px; }
 .bundle-copy h3 { font-size: 2rem; }
 .bundle-copy > p:not(.eyebrow) { font-size: 1rem; color: var(--muted); }
@@ -111,13 +111,12 @@ ul,ol { padding-left: 1.3rem; }
 .school-enquiry { display: flex; margin-top: 16px; font-size: .9rem; }
 .featured-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
 .resource-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
-.resource-image-link { display: block; padding: 14px; background: #f0f5f3; }
-/* The square Etsy previews have an opaque background in this colour. */
-.resource-image-listing { background: #e2ece9; }
-.resource-image-link img { width: 100%; border-radius: 3px; }
+.resource-image-link { display: grid; place-items: center; aspect-ratio: 3 / 2; padding: 18px; background: #edf4f1; }
+.resource-image-link img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
 .resource-card-body { padding: 26px; display: flex; flex-direction: column; flex: 1; }
 .resource-card h3 { font-size: 1.4rem; }
 .resource-card-body > p:not(.resource-meta) { color: var(--muted); font-size: 1rem; }
+.resource-card-body > p.resource-contents { font-size: .9rem; font-weight: 600; }
 .resource-meta { font-size: .8rem; font-weight: 600; color: var(--teal-ink); margin-bottom: 12px; }
 .resource-meta span { padding-inline: 6px; }
 .resource-actions { margin-top: auto; padding-top: 8px; }
@@ -426,24 +425,4 @@ ul,ol { padding-left: 1.3rem; }
   .desktop-nav.has-sliding-indicator::after { background: LinkText; }
 }
 
-/* Product metadata stays crisp, accessible and separate from the transparent artwork. */
 .trust-strip li { text-align: center; }
-.bundle-art { padding: 0; align-self: stretch; height: 100%; text-decoration: none; }
-.resource-image-link:has(.product-artwork) { padding: 0; text-decoration: none; }
-.product-artwork { display: flex; flex-direction: column; justify-content: center; gap: 20px; height: 100%; padding: 25px 18px 22px; background: #edf4f1; }
-.product-badges { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.product-pill { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; padding: 5px 10px; font-size: .7rem; font-weight: 800; line-height: 1.3; }
-.product-pill-age { color: #624483; background: #f0e7f7; border: 1px solid #c6abd9; }
-.product-pill-format { color: var(--teal-ink); background: white; border: 1px solid #a8ceca; }
-.product-pill-format svg { width: 16px; height: 16px; }
-.product-artwork img, .content-page .product-artwork img { width: 100%; max-width: none; height: auto; aspect-ratio: 3 / 2; object-fit: contain; border-radius: 0; }
-.product-artwork-caption { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
-.product-pill-contents { background: #e8d5ef; color: #553d66; padding-inline: 16px; }
-.product-evidence { font-size: .67rem; color: var(--teal-ink); font-weight: 700; }
-.product-contents { font-size: .75rem; color: var(--navy); }
-.product-artwork-bundle { padding: 30px 24px; gap: 24px; }
-.product-artwork-bundle .product-pill { font-size: .78rem; }
-@media (max-width: 680px) {
-  .product-artwork { gap: 18px; }
-  .product-artwork-bundle { padding: 24px 18px; }
-}
