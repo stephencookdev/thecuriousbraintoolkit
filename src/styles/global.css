@@ -112,6 +112,8 @@ ul,ol { padding-left: 1.3rem; }
 .featured-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
 .resource-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
 .resource-image-link { display: block; padding: 14px; background: #f0f5f3; }
+/* The square Etsy previews have an opaque background in this colour. */
+.resource-image-listing { background: #e2ece9; }
 .resource-image-link img { width: 100%; border-radius: 3px; }
 .resource-card-body { padding: 26px; display: flex; flex-direction: column; flex: 1; }
 .resource-card h3 { font-size: 1.4rem; }

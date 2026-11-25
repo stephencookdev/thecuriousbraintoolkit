@@ -30,6 +30,8 @@ Product age, format and contents pills now use accessible HTML/CSS in `ProductAr
 
 The homepage Safety Alarm cover (`hero/safety-alarm-cover.webp`) uses Sarah’s updated `Slide1.PNG` from her 16 November 2026 email, “Safety Alarm Etsy image and PNGs”. The Safety Alarm product preview and both new worry previews use Sarah’s Etsy artwork from the same batch of emails.
 
+The November archive also includes individual worksheet PNGs for Safety Alarm, Worry Time and Have a Go, as well as the free-resource PDFs and their previews. The square listing artwork is flattened onto a pale background. The Problem Solving preview comes from Etsy, and the November archive does not include its original artwork or worksheet exports. The Thoughts and Feelings toolkits still use the October reconstructions.
+
 ## Source control asset budget
 
 Production hero pages are 600 pixels wide; product fans are 1000 pixels wide. Both use WebP quality 82 with alpha quality 95 for the transparent fans. Each is approximately 41–143 KiB. The full production image directory is about 1 MiB. Original PNG masters, original listing screenshots, obsolete embedded-raster SVGs, mockups and browser screenshots stay in ignored reference folders. Heroicons remain small native SVGs with their MIT licence.
